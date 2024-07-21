@@ -1,0 +1,164 @@
+<div class="mainHome">
+    <div class="sideNav">
+       <div class="route">
+        Home > <span style="color: #030712; font-size: 12px; letter-spacing: -0.32px;padding-left: 1vw;">Shop</span>
+       </div>
+      <p class="widgetText">Widget price filter</p> 
+      <div class="priceBox">
+        <div class="minPrice">
+          <p class="priceText">Min price</p>
+          <input type="number" class="price" [(ngModel)]="minPriceVal" (change)="filterProducts()">
+        </div>
+        <p class="inBetween">-</p>
+        <div class="maxPrice">
+          <p class="priceText">Max price</p>
+          <input type="number" class="price" [(ngModel)]="maxPriceVal" (change)="filterProducts()">
+        </div>
+        
+
+</div>
+<mat-slider min="0" max="1000" class="custom-slider" style="width: 77%;"  >
+    <input [value]="minPriceVal" matSliderStartThumb (input)="updatePriceRangeMin($event)">
+    <input [value]="maxPriceVal" matSliderEndThumb (input)="updatePriceRangeMax($event)">
+  </mat-slider>
+  <div class="filterBut">
+    <p class="priceRange">Price: ${{minPriceVal}} — ${{maxPriceVal}}</p>
+    <button class="filterButton" (click)="clearFilterRange()">Filter</button>
+    <button class="filterButton" >Clear</button>
+</div>
+<div class="checkBoxSection">
+    <p class="widgetText">Product Categories</p> 
+    <div *ngFor="let checkbox of checkboxes" class="checkbox-item">
+      <input type="checkbox" [id]="checkbox.id" [checked]="checkbox.checked" (change)="onCheckboxChange($event, checkbox)">
+      <div class="labelContainer">
+
+          <label [for]="checkbox.id" [class.activeCategories]="checkbox.checked" class="categories">
+            <p class="labelText">{{ checkbox.label }} </p>
+            <img *ngIf="checkbox.containPlus" [src]="plusIcon" alt="" class="imgPlus">
+        </label>
+    </div>
+</div>
+</div>
+<div class="colorSection">
+  <p class="widgetText">Filter by Color</p>
+  <div class="colorList">
+    <div class="colorItem" *ngFor="let color of colorOptions" [class.selected]="color.checked" (click)="onColorClick(color)">
+      <span class="colorDot" [style.background]="color.value"></span>
+      <span class="colorName">{{ color.name }}</span>
+    </div>
+  </div>
+</div>
+
+  <div class="brandSection">
+    <p class="widgetText">Filter by Brand</p>
+    <div class="colorList">
+        <div *ngFor="let checkbox of checkBrands" class="checkbox-item">
+            <input type="checkbox" [id]="checkbox.id" [checked]="checkbox.checked" (change)="onCheckboxChange($event, checkbox)">
+            <div class="labelContainer">
+                
+                <label [for]="checkbox.id" [class.activeCategories]="checkbox.checked" class="categories">
+                    <p class="labelText">{{ checkbox.label }} </p>
+                    <img *ngIf="checkbox.containPlus" [src]="plusIcon" alt="" class="imgPlus">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="brandSection">
+    <p class="widgetText">Product Status</p>
+    <div class="colorList">
+        <div *ngFor="let checkbox of checkStatus" class="checkbox-item">
+            <input type="checkbox" [id]="checkbox.id" [checked]="checkbox.checked" (change)="onCheckboxChange($event, checkbox)">
+            <div class="labelContainer">
+                
+                <label [for]="checkbox.id" [class.activeCategories]="checkbox.checked" class="categories">
+                    <p class="labelText">{{ checkbox.label }} </p>
+                    <img *ngIf="checkbox.containPlus" [src]="plusIcon" alt="" class="imgPlus">
+                </label>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+</div>
+    <div class="mainContainer">
+      <div class="clearFilter">
+        <span *ngIf="choosenCategories.length > 0 || choosenColors.length > 0" class="clearAll" (click)="clearFilter()">✖ clear filters</span>
+        <span *ngFor="let category of choosenCategories" class="clearAll" (click)="clearCategoryFilter(category)">✖ {{ category }}</span>
+        <span *ngFor="let color of choosenColors" class="clearAll" (click)="clearColorFilter(color)">✖ {{ color }}</span>
+      </div>
+    <img [src]="shopBanner" alt="" class="shopBanner">
+    <div class="showingResultBar">
+        <p class="showingText">Showing all {{this.products.length}} results</p>
+        <p class="sortText">Sort:
+            <span class="insideSort">Sort by latest</span>
+        </p>
+        <div class="showSection">
+            <p class="sortText2">Show:
+                <span class="insideSort">{{this.products.length}} Items</span>
+            </p>
+            <div class="arrayContainers">
+                <div  [ngClass]="{'array-background': isArrangeLayout, 'column-background': isColumnLayout}">
+                    <img [src]="arrange" alt="" class="arrange" (click)="toggleArrangeLayout()">
+                </div>
+                <div  [ngClass]="{'column-background': isArrangeLayout, 'array-background': isColumnLayout}">
+                    <img [src]="column" alt="" class="column" (click)="toggleColumnLayout()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="itemsContainer">
+        <div  [ngClass]="{'arrangeLayout': isArrangeLayout, 'columnLayout': isColumnLayout}" *ngIf="products?.length">
+            <div  [ngClass]="{'cardContainer': isArrangeLayout, 'cardContainerColumn': isColumnLayout}"  *ngFor="let product of products; let i = index">
+            <img [src]="product.image" alt="" style="width: 177px; height: 177px;">
+            <div  [ngClass]="{'discountNum': isArrangeLayout, 'discountNumColumn': isColumnLayout}">
+              <p class="discountAmount">
+                {{ randomIncrementNumber[i] }}%
+              </p>
+            </div>
+            <div [ngClass]="{'cardInfo': isColumnLayout}">
+
+                <p class="cardTitle">{{ product.title }}</p>
+                <div [ngClass]="{'ratingContainer': isColumnLayout}">
+                  <div class="starRating">
+                    <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+                      <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+                      <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+                    </ng-container>
+                    <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+                      <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+                    </ng-container>
+                  </div>
+                  <p class="leftStock">{{ product.rating.rate }}</p>
+                </div>
+            </div>
+            <p class="priceItem">{{ calculateDiscountedPrice(product.price, i) | number:'1.2-2' }}$
+              <ng-container>
+                <span class="preValue">{{ product.price }}$</span>
+              </ng-container>
+            </p>
+            <div class="chartStock" (click)="navigateToProductList(product, i)">
+              <img [src]="chart" alt="" class="chart" >
+              <p class="inStock">In Stock</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+
+<ng-template #fullStarTemplate>
+    <img src="assets/images/Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #halfStarTemplate>
+    <img src="assets/images/half-Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #blankStarTemplate>
+    <img src="assets/images/blank-Star.svg" width="25px" height="25px" />
+  </ng-template>

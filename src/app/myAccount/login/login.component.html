@@ -1,0 +1,41 @@
+<div class="mainContainer">
+    <div class="navRoute">
+       <p class="homeRoute">
+        Home > <span style="color: #030712; font-size: 12px; letter-spacing: -0.32px;padding-left: 1vw;">My account</span>
+       </p> 
+    </div>
+    <div class="loginContainer">
+        <div class="logRegButtons">
+            <p class="loginButton">Login</p>
+            <p class="registerButton" (click)="navigateToRegister()">Register</p>
+        </div>
+        <div class="noteLogin">
+         <p class="haveAccount">
+            If you have an account, sign in with your username or email address.
+         </p>  
+        </div>
+        <div class="enterInfo">
+            <p class="userName">Username or email address *</p>
+            <input class="emailInput">
+            <p class="password">Password *</p>
+            <div class="passwordInputContainer" style="    display: flex;
+            gap: 1%;
+            align-items: center;
+            width: 103%;
+        ">
+                <input class="passwordInput" [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" #passwordInput>
+                <button mat-icon-button style="background: transparent; border: none;" class="togglePasswordButton" (click)="togglePasswordVisibility()" [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'">
+                  <img [src]="hidePassword ? eyeOn : eyeOff" alt="Eye icon" class="logoImg">
+                </button>
+              </div>
+        </div>
+        <div class="rememberPassword">
+            <div class="checkbox">
+                <input type="checkbox"> 
+                <p style="font-size: 12px; font-weight: 400; width: 100%; padding-left: 0.4vw;" >Remember me</p>
+            </div>
+            <p class="lostPassword">Lost your password?</p>
+        </div>
+        <button class="login">Log In</button>
+    </div>
+</div>

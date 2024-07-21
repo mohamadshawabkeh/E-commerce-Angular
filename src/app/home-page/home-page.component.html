@@ -1,0 +1,302 @@
+<div class="mainContainer">
+    <div class="home-container">
+        <div class="middle-image" [ngClass]="{'move-right': showMenu}">
+            <img [src]="mainPhoto" alt="Middle Image">
+            <p class="image-text" [ngClass]="{'move-right-text': showMenu}">Get the best quality products at the lowest prices</p>
+            <p class="image-text2"  [ngClass]="{'move-right-text2': showMenu}" style="color: #030712; font-size: 15px; top: 69%; font-weight: 400;">We have prepared special discounts for you on grocery products. Don't miss these opportunities...</p>
+            <p class="image-text2"></p>
+            <button class="shopNow"  [ngClass]="{'move-right-button': showMenu}" (click)="navigateToShop()" style="cursor: pointer;">Shop Now</button>
+        </div>
+        <div class="category-menu" *ngIf="showMenu">
+            <div class="ifHome" *ngFor="let item of menuItems">
+                <img [src]="item.allCategory" alt="" class="menuIcon">
+                <div class="arrowToRight">
+                    <p class="allCategory">
+                        {{ item.categoryText }}
+                    </p>  
+                    <img [src]="item.arrowPhoto" class="favIcon" style="padding-left: 0.4vw; rotate: 270deg;">
+                </div>
+            </div>
+        </div>
+      </div>
+     <div class="secondSection" >
+        <div class="payOnline" *ngFor="let item of comSection">
+            <img [src]="item.imageComSection" alt="">
+            <div class="talkPay">
+                <p class="titlePay">Payment only online</p>
+                <p class="descPay">Tasigförsamhet beteendedesign. Mobile
+                    checkout. Ylig kärrtorpa.</p>
+            </div>
+        </div>
+     </div>
+     <div class="thirdBanner">
+         <img [src]="thirdBanner" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+         <!-- <button class="shopNowBanner" >Shop Now</button> -->
+
+         <img [src]="thirdBanner2" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+         <img [src]="thirdBanner3" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+
+     </div>
+      <div class="arrivals">
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;">New Arrivals.</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Dont miss this opportunity at a special discount just for this week.</p>
+        </div>
+        <button style="width: 7%;
+        height: 4.9vh;
+        background: #ffffff;
+        border: 1px #E5E7EB solid;
+        border-radius: 252px;
+        color: #212529;
+        font-weight: 700;">View All</button>
+      </div>
+      <div class="cardsMarket" *ngIf="products?.length">
+        <div class="cardContainer" *ngFor="let product of fiveProducts let i = index"
+        [ngClass]="{ 'firstCard': isFirst(i), 'lastCard': isLast(i) }">
+        <img [src]="product.image" alt="" style="width: 177px; height: 177px;">
+        <div class="discountNum"> 
+            <p class="discountAmount">
+               {{ randomIncrementNumber }}%
+        </p> 
+    </div>
+          <p class="cardTitle">{{ product.title }}</p>
+          <div class="starRating">
+            <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+              <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+              <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+            </ng-container>
+            <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+              <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+            </ng-container>
+          </div>
+          <p class="leftStock">Rating: {{ product.rating.rate }}</p>
+          <p class="price">{{  calculateDiscountedPrice(product.price) | number:'1.2-2' }}$
+            <ng-container >
+              <span class="preValue">{{ product.price }}$</span>
+            </ng-container>
+           
+          </p>          
+          <button class="addToChart">Add To Cart</button>
+        </div>
+      </div>
+      <div class="forthBannerContainer">
+        <img [src]="forthBanner" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+        <img [src]="forthBanner2" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+        <img [src]="forthBanner3" alt="" style="cursor: pointer;    width: 30%;" (click)="navigateToShop()">
+
+      </div>
+      <div class="arrivals">
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;">Featured Products</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Do not miss the current offers until the end of March.</p>
+        </div>
+        <button style="width: 7%;
+        height: 4.9vh;
+        background: #ffffff;
+        border: 1px #E5E7EB solid;
+        border-radius: 252px;
+        color: #212529;
+        font-weight: 700;">View All</button>
+      </div>
+      <div class="secondCards">
+        <div class="secondCardsMarket" *ngFor="let product of sixProducts let i = index">
+          <div class="secondCardContainer" 
+          [ngClass]="{ 'firstCard': isFirst(i), 'lastCard': isLast(i) }">
+          <div class="imageSection">
+            <img [src]="product.image" alt="" style="width: 183px; height: 243px;">
+            <div class="secondDiscountNum"> 
+              <p class="discountAmount">
+                {{ randomIncrementNumber }}%
+              </p> 
+            </div>
+            <img class="favIcon2" [src]="favIcon" alt="" >
+            <div class="date-container">
+              <p class="datePart">88</p>
+              <p class="datePart">12</p>
+              <p class="datePart">14</p>
+              <p style="color: #4B5563; font-weight: 800;display: flex; align-items: center;">:</p>
+              <p class="datePart">21</p>
+            </div>
+          </div>
+      
+          <div class="secondCardForm">
+        <p class="secondCardTitle">{{ product.title }}</p>
+        <div class="starRating">
+          <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+            <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+            <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+            <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+          </ng-container>
+        </div>
+        <p class="leftStock">Rating: {{ product.rating.rate }}</p>
+        <p class="price">{{  calculateDiscountedPrice(product.price) | number:'1.2-2' }}$
+          <ng-container >
+            <span class="preValue">{{ product.price }}$</span>
+          </ng-container>
+          
+        </p>          
+        <button class="addToChart">Add To Cart 
+          <img [src]="plusIcon" alt="" >
+          
+        </button>
+      </div>
+      </div>
+        </div>
+
+      </div>
+      <div class="forthBannerContainer">
+        <img [src]="fifthBanner" alt="" style="cursor: pointer;    width: 47%;" (click)="navigateToShop()">
+        <img [src]="fifthBanner2" alt="" style="cursor: pointer;    width: 47%;" (click)="navigateToShop()">
+      </div>
+      <div class="arrivals">
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;">Best Sellers</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Some of the new products arriving this weeks</p>
+        </div>
+        <button style="width: 7%;
+        height: 4.9vh;
+        background: #ffffff;
+        border: 1px #E5E7EB solid;
+        border-radius: 252px;
+        color: #212529;
+        font-weight: 700;">View All</button>
+      </div>
+      <div class="sixthContainer">
+        <div class="cardsMarket2" *ngIf="products?.length">
+          <div class="cardContainer2" *ngFor="let product of fourProducts let i = index"
+          [ngClass]="{ 'firstCard': isFirst(i), 'lastCard': isLast(i) }">
+           <div class="discountNum2"> 
+            <p class="discountAmount">
+               {{ randomIncrementNumber }}%
+        </p> 
+    </div>
+          <img [src]="product.image" alt="" style="width: 150px; height: 150px; display: flex;
+          justify-content: center;">
+            <p class="cardTitle">{{ product.title }}</p>
+            <div class="starRating">
+              <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+                <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+              </ng-container>
+              <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+                <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+              </ng-container>
+              <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+                <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+              </ng-container>
+            </div>
+            <p class="leftStock">Rating: {{ product.rating.rate }}</p>
+            <p class="price">{{  calculateDiscountedPrice(product.price) | number:'1.2-2' }}$
+              <ng-container >
+                <span class="preValue">{{ product.price }}$</span>
+              </ng-container>
+             
+            </p>          
+            <button class="addToChart">Add To Cart</button>
+          </div>
+        </div>
+        <div class="sixthBannerContainer" (click)="navigateToShop()">
+          <img [src]="sixthBanner" alt="" style="    cursor: pointer; height: 50%;padding-top: 10px;">
+          <img [src]="sixthBanner2" alt="" style="cursor: pointer;height: 49.5%;">
+        </div>
+        <div class="cardsMarket2" *ngIf="products?.length">
+          <div class="cardContainer2" *ngFor="let product of fourProducts let i = index"
+          [ngClass]="{ 'firstCard': isFirst(i), 'lastCard': isLast(i) }">
+          <div class="discountNum2"> 
+              <p class="discountAmount">
+                 {{ randomIncrementNumber }}%
+          </p> 
+      </div>
+          <img [src]="product.image" alt="" style="width: 150px; height: 150px; display: flex;
+          justify-content: center;">
+            <p class="cardTitle">{{ product.title }}</p>
+            <div class="starRating">
+              <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+                <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+              </ng-container>
+              <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+                <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+              </ng-container>
+              <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+                <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+              </ng-container>
+            </div>
+            <p class="leftStock">Rating: {{ product.rating.rate }}</p>
+            <p class="price">{{  calculateDiscountedPrice(product.price) | number:'1.2-2' }}$
+              <ng-container >
+                <span class="preValue">{{ product.price }}$</span>
+              </ng-container>
+             
+            </p>          
+            <button class="addToChart">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="lastBannerContainer">
+        <img [src]="lastBanner" alt="" style="cursor: pointer; padding: 2vh 2vw 2vh 2vw;
+        width: 95.9%;">
+      </div>
+      <div class="arrivals">
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;">Popular Companies</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Some of the new products arriving this weeks</p>
+        </div>
+        <button style="width: 7%;
+        height: 4.9vh;
+        background: #ffffff;
+        border: 1px #E5E7EB solid;
+        border-radius: 252px;
+        color: #212529;
+        font-weight: 700;">View All</button>
+      </div>
+        <div class="ratingContainer">
+          <ng-container  class="ratingCard" *ngFor="let account of fakeAccount"> 
+            <div class="formRate">
+              <div class="picAndName">
+                <img [src]="profileRate" alt="" class="profileRate">
+                <div class="nameAndFeature">
+                     <p class="accountName">{{account.profileName}}</p>
+                     <p class="featureRate">Featured</p>
+                     <div class="ratingForm">
+                       <div class="starRating">
+                        <ng-container *ngFor="let _ of starArray(getStarRating(account.rate).fullStars)">
+                          <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container> 
+                        </ng-container>
+                        <ng-container *ngIf="getStarRating(account.rate).halfStar">
+                          <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+                        </ng-container>
+                        <ng-container *ngFor="let _ of starArray(5 - getStarRating(account.rate).fullStars - (getStarRating(account.rate).halfStar ? 1 : 0))">
+                          <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+                        </ng-container>
+    
+                      </div>
+                      <p class="rateNum">{{account.rate}}</p>
+                     </div>
+                </div>
+              </div>
+              <div class="commentBox">
+                <p class="commentText">{{account.comment}}</p>
+              </div>
+            </div>
+          </ng-container> 
+        </div>
+</div>
+
+
+<ng-template #fullStarTemplate>
+    <img src="assets/images/Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #halfStarTemplate>
+    <img src="assets/images/half-Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #blankStarTemplate>
+    <img src="assets/images/blank-Star.svg" width="25px" height="25px" />
+  </ng-template>
+    

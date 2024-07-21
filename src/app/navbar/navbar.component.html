@@ -1,0 +1,80 @@
+<div class="container" >
+    <div class="globalNotification">
+        <p class="globalText">FREE delivery & 40% Discount for next 3 orders! Place your 1st order in.</p>
+        <div class="timeForGlobal" style="display: flex; flex-direction: row; gap: 1%; width: 35%; align-items: center;">
+            <p class="globalTime" style="font-size: 14px;">Until the end of the sale: </p>
+            <p class="timeEdit">47</p> 
+            <p class="globalTime">days </p>
+            <p class="timeEdit">06</p>
+            <p class="globalTime">hours </p>
+            <p class="timeEdit">55</p> 
+            <p class="globalTime">minute </p>
+            <p class="timeEdit">51</p> 
+            <p class="globalTime">sec. </p>
+        </div>
+    </div>
+    <div class="selectorSection" style="width: 95.3%; height: 15%; display: flex; flex-direction: row; gap: 0.5%; margin-left: 3%; padding: 0.8%;">
+        <p class="selectorText" style="font-weight: 600;">About Us</p>
+        <p class="selectorText" style="font-weight: 600;">My account</p>
+        <p class="selectorText" style="font-weight: 600;">Wishlist</p>  
+        <p class="selectorText2" > We deliver to you every day from</p>
+        <p class="selectorText" style="color: #EA580C; font-weight: 800; "> 7:00 to 23:00</p>
+    </div>
+    <div class="searchbarSection" style="width: 98.4%; height: auto; padding: 2%;padding: 0.8%; border-top: 1px #eae2e2 solid;">
+        <div class="searchBarContainer" style="margin-left: 3%; display: flex; flex-direction: row; gap: 1.2%; ">
+            <img [src]="siteLogo" alt="photo" class="logoImg">
+            <img [src]="pinIcon" alt="photo" class="pinIcon">
+            Deliver to <span style="font-weight: 800;">all</span> 
+            <input type="text" class="searchBar" placeholder="Search for products, categories or brands..." style="width: 60%; background-color: #F3F4F6;">
+            <img [src]="searchIcon" alt="photo" style="position: absolute;
+                right: 309px;
+                top: 113px;">
+                <div class="signInAccount" (click)="navigateToSign()" style="cursor: pointer;">
+                    <img [src]="profileIcon" alt="photo" class="profileIcon" >
+                    Sign in Account
+
+                </div>
+            <img [src]="favIcon" alt="photo" class="favIcon">
+            <img [src]="cartIcon" alt="photo" class="cartIcon">
+        </div>
+
+    </div>
+    <div class="toolsSection" style="display: flex; flex-direction: row;margin-left: 4%;justify-content: space-between;">
+        <div class="ifHome" *ngIf="currentRoute === '/home'">
+            <img [src]="allCategory" alt="photo" class="menuIcon" (click)="onAllCategoryClick()">
+            <div class="arrowToRight">
+                <p class="allCategory" (click)="onAllCategoryClick()">
+                  All Category
+                </p>  
+                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left: 0.4vw; rotate: 270deg;" (click)="onAllCategoryClick()">
+            </div>
+        </div>
+        
+        <div class="leftSide" style="display: flex;flex-direction: row;gap: 2vw;">
+            <p class="toolText" [ngClass]="{'activeSet': isHomeRoute()}" (click)="navigateToHome()">
+                Home
+                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left: 0.4vw" (click)="navigateToHome()">
+            </p>
+            
+            
+            <p class="toolText" [ngClass]="{'activeSet': isShopRoute()}" (click)="navigateToShop()" >Shop
+                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left:0.4vw">
+            </p>
+            <p class="toolText">Fruits & Vegetables</p>
+            <p class="toolText">Beverages</p>
+            <p class="toolText">Blog</p>
+            <p class="toolText">Contact</p>
+        </div>
+        <div class="rightSide" style="display: flex;flex-direction: row;gap: 2.9vh;width: 34%;">
+            <p class="toolText">Trending Products
+                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left:0.4vw">
+            </p>
+            <p class="toolText2">Almost Finished</p>
+            <div class="saleSection" style=" display: flex;">
+                <p class="toolText3">SALE
+                </p>
+                <img [src]="downArrowRed" alt="photo" class="favIcon">
+            </div>
+        </div>
+    </div>
+</div>

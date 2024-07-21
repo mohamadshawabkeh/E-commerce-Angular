@@ -1,0 +1,34 @@
+<div class="chatbot-container" [class.open]="isOpen">
+  <div class="chatbot-icon" *ngIf="!isOpen" (click)="toggleChat()">💬</div>
+  <div class="chat-window" *ngIf="isOpen">
+    <div class="chat-header">
+      <h3>Chat with us</h3>
+      <button (click)="closeChat($event)" class="xButton">✖</button>
+    </div>
+    <div class="chat-body" #chatBodyRef>
+      <div class="messages">
+        <div #messageRef *ngFor="let message of messages" [ngClass]="{'messageWithIconUser': message.sender === 'user', 'messageWithIcon': message.sender === 'bot'}">
+          <img *ngIf="message.sender === 'user'" src="{{ user }}" class="avatar">
+          <img *ngIf="message.sender === 'bot'" src="{{ chatbotLogo }}" class="avatar">
+          <div [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+            <div class="avatar-container"></div>
+            <div class="message-text">{{ message.text }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showLoading" class="loading-indicator">
+        <img src="{{ loading }}" alt="Loading...">
+      </div>
+      
+      <div class="predefined-messages">
+        <button *ngFor="let msg of predefinedMessages" (click)="sendPredefinedMessage(msg);">{{ msg }}</button>
+      </div>
+    </div>
+     <div class="chat-footer">
+        <input [(ngModel)]="userInput" placeholder="Type your message" (keydown.enter)="sendMessage()" />
+        <button (click)="sendMessage()">
+          <img src="{{sendMessageIcon}}" alt="">
+        </button>
+      </div>
+  </div>
+</div>
