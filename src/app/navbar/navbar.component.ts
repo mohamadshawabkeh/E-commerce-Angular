@@ -26,6 +26,7 @@ export class NavbarComponent {
   hours: number = 6;
   minutes: number = 55;
   seconds: number = 51;
+  clickedAllCategory:boolean=false;
 
   private timerInterval: any;
 
@@ -49,7 +50,14 @@ export class NavbarComponent {
   navigateToSign() {
     this.router.navigate(['/my-account/login']);
   }
+  isContactRoute(): boolean {
+    return this.currentRoute === '/contact';
+  }
+  navigateToContact() {
+    this.router.navigate(['/contact']);
+  }
   onAllCategoryClick() {
+    this.clickedAllCategory=!this.clickedAllCategory;
     this.menuService.toggleMenu();
   }
 

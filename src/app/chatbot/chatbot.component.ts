@@ -15,6 +15,7 @@ export class ChatbotComponent {
   user: string = "assets/icons/chatbot/user.png";
   loading: string = "assets/icons/chatbot/loading.svg";
   sendMessageIcon: string = "assets/icons/chatbot/sendMessage.png";
+  chatbotIcon: string = "assets/images/chatbotIcon.png";
 
   @ViewChild('chatBodyRef') private chatBodyRef!: ElementRef;
   @ViewChildren('messageRef') messageRefs!: QueryList<ElementRef>;

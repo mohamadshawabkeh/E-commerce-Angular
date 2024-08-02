@@ -47,3 +47,16 @@ $custom-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// @media (max-width: 767px) {
+//   body {
+//       font-size: 14px;
+//       padding: 10px;
+//   }
+// }
+
+// @media (min-width: 768px) and (max-width: 1024px) {
+//   body {
+//       font-size: 15px;
+//       padding: 15px;
+//   }
+// }
