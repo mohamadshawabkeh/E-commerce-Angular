@@ -1,0 +1,167 @@
+<div class="product-details-content" [class.loading-background]="loading">
+
+<div class="mainContainer">
+    <div class="route">
+        Home > <span style="color: #030712; font-size: 12px; letter-spacing: -0.32px;padding-left: 1vw;">Shop</span>
+       </div>
+    <div class="topSection">
+     <div class="picSection" >
+           <img [src]="this.product.image" alt="" class="showImage">
+     </div>
+     <div class="rightSection">
+       <p class="productTitle"> {{this.product.title}}</p>
+       <div class="rateSection">
+           <div class="starRating">
+            <ng-container *ngFor="let _ of starArray(getStarRating(starsContain).fullStars)">
+              <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="getStarRating(starsContain).halfStar">
+              <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+            </ng-container>
+            <ng-container *ngFor="let _ of starArray(5 - getStarRating(starsContain).fullStars - (getStarRating(starsContain).halfStar ? 1 : 0))">
+              <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+            </ng-container>
+          </div>
+         <div class="rateNum"> 
+             <p class="ratebox">
+                 {{this.product.rating.rate}} 
+             </p>  
+        </div>
+        <p class="sku">SKU:
+           <span class="skuNum">E7F8G9H0</span>
+        </p>
+    </div>
+    <p class="description">
+        {{this.product.description}}
+    </p>
+    <p class="priceItem">{{ this.discountedPrice | number:'1.2-2' }}$
+        <ng-container>
+          <span class="preValue">{{ this.product.price }}$</span>
+        </ng-container>
+      </p>
+      <button class="orderWhats">Order On Whatsapp</button>
+      <div class="timerContainer">
+        <p class="offer">Special Offer :</p>
+        <div class="date-container">
+            <p class="datePart">88</p>
+            <p class="datePart">12</p>
+            <p class="datePart">14</p>
+            <p style="color: #4B5563; font-weight: 800;display: flex; align-items: center;">:</p>
+            <p class="datePart">21</p>
+          </div>
+          <p class="remainOffer">Remains until the end of the offer.</p>
+      </div>
+      <div class="cartButtons">
+          <div class="quantity-box">
+            <button class="btn" (click)="decrease()">-</button>
+            <span class="quantity">{{ quantity }}</span>
+            <button class="btn" (click)="increase()">+</button>
+          </div>
+         <button class="addCart">
+            <img [src]="addCartIcon" alt="">
+            Add to cart
+         </button>
+         <button class="buyNow">
+            <img [src]="addCartIcon" alt="">
+            Buy Now
+         </button>
+      </div>
+      <div class="instruction">
+        <div class="payment">
+            <img [src]="paymentIcon" alt="" class="paymentImg">
+          <p style="color: #6B7280; font-weight: 800; font-size: 13px;">Payment.  <span class="instructionText">Payment upon receipt of goods, Payment by card in the department, Google Pay, Online card, -5% discount in case of payment</span>
+          </p> 
+        </div>
+        <div class="warranty">
+            <img [src]="warrantyIcon" alt="" class="paymentImg">
+          <p style="color: #6B7280; font-weight: 800; font-size: 13px;">Warranty.   <span class="instructionText">The Consumer Protection Act does not provide for the return of this product of proper quality.</span>
+          </p> 
+        </div>
+      </div>
+      <div class="lastSection">
+        <div class="favSection">
+            <img [src]="favIcon" alt="" class="imgAlign">
+            <p class="bottomText">Add to wishlist</p>
+        </div>
+        <div class="favSection">
+            <img [src]="shareIcon" alt="" class="imgAlign">
+            <p class="bottomText">Add to wishlist</p>
+        </div> <div class="favSection">
+            <img [src]="replayIcon" alt="" class="imgAlign">
+            <p class="bottomText">Add to wishlist</p>
+        </div>
+      </div>
+     </div>
+   </div>
+   <div class="bottomSection">
+
+   </div>
+</div>
+<div *ngIf="loading" class="loading-overlay">
+    <div class="loading-spinner">
+      <img src="assets/icons/product/loadingSpinner.svg" alt="Loading Spinner">
+    </div>
+  </div>
+<div class="bottomSection">
+    <div class="reviewProduct">
+        <button class="descriptionSection">Description</button>
+        <button class="reviews">Reviews</button>
+    </div>
+    <div class="textSection">
+        <p class="textReq">Quisque varius diam vel metus mattis, id aliquam diam rhoncus. Proin vitae magna in dui finibus malesuada et at nulla. Morbi elit ex, viverra vitae ante vel, blandit feugiat ligula. Fusce
+            fermentum iaculis nibh, at sodales leo maximus a. Nullam ultricies sodales nunc, in pellentesque lorem mattis quis. Cras imperdiet est in nunc tristique lacinia. Nullam aliquam mauris eu
+            accumsan tincidunt. Suspendisse velit ex, aliquet vel ornare vel, dignissim a tortor.<br> <br>
+            Morbi ut sapien vitae odio accumsan gravida. Morbi vitae erat auctor, eleifend nunc a, lobortis neque. Praesent aliquam dignissim viverra. Maecenas lacus odio, feugiat eu nunc sit amet,
+maximus sagittis dolor. Vivamus nisi sapien, elementum sit amet eros sit amet, ultricies cursus ipsum. Sed consequat luctus ligula. Curabitur laoreet rhoncus blandit. Aenean vel diam ut
+arcu pharetra dignissim ut sed leo. Vivamus faucibus, ipsum in vestibulum vulputate, lorem orci convallis quam, sit amet consequat nulla felis pharetra lacus. Duis semper erat mauris, sed
+egestas purus commodo vel.
+        </p>
+    </div>
+    <p class="related">Related products</p>
+    <div class="itemsContainer">
+        <div  class="arrangeLayout">
+            <div  class="cardContainer"  *ngFor="let product of sixProducts; let i = index">
+            <img [src]="product.image" alt="" style="width: 177px; height: 177px;">
+            <div  class="discountNum">
+              <p class="discountAmount">
+                {{ randomIncrementNumber[i] }}%
+              </p>
+            </div>
+                <p class="cardTitle">{{ product.title }}</p>
+                  <div class="starRating">
+                    <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
+                      <ng-container *ngTemplateOutlet="fullStarTemplate"></ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="getStarRating(product.rating.rate).halfStar">
+                      <ng-container *ngTemplateOutlet="halfStarTemplate"></ng-container>
+                    </ng-container>
+                    <ng-container *ngFor="let _ of starArray(5 - getStarRating(product.rating.rate).fullStars - (getStarRating(product.rating.rate).halfStar ? 1 : 0))">
+                      <ng-container *ngTemplateOutlet="blankStarTemplate"></ng-container>
+                    </ng-container>
+                  <p class="leftStock">{{ product.rating.rate }}</p>
+                </div>
+            <p class="priceItem">{{ calculateDiscountedPrice(product.price, randomIncrementNumber[i]) | number:'1.2-2' }}$
+              <ng-container>
+                <span class="preValue">{{ product.price }}$</span>
+              </ng-container>
+            </p>
+            <div class="chartStock" #chartStock (click)="navigateToProductList(product, i)">
+                <img [src]="chart" alt="" class="chart">
+                <p class="inStock">In Stock</p>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+<ng-template #fullStarTemplate>
+    <img src="assets/images/Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #halfStarTemplate>
+    <img src="assets/images/half-Star.svg" width="25px" height="25px" />
+  </ng-template>
+  
+  <ng-template #blankStarTemplate>
+    <img src="assets/images/blank-Star.svg" width="25px" height="25px" />
+  </ng-template>

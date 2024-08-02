@@ -1,0 +1,382 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+ 
+    .middle-image {
+        position: relative;
+        width: 4%;
+        transition: transform 0.3s ease, padding-left 0.3s ease; /* Include padding transition */
+        padding-left: 13.4vw; /* Initial padding */
+      
+        &.move-right {
+            transform: translateX(390px);
+            padding-left: 0; 
+        }
+    }
+    .category-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    img {
+        display: block; /* Ensures the image behaves as a block element */
+      }
+  
+      .image-text,
+      .image-text2 {
+        width: 153%;
+        position: absolute;
+        top: 43%;
+        left: 184%;
+        transform: translate(-50%, -50%);
+        color: #39245F;
+        font-size: 42px;
+        font-weight: 700;
+        z-index: 10;
+        transition: transform 0.3s ease, left 0.3s ease; 
+        &.move-right-text {
+            left: 478%; 
+            width: 684%;
+
+        }
+        &.move-right-text2 {
+            left: 478%; 
+            width: 684%;
+
+        }
+    }
+    .shopNow{
+        position: absolute;
+        width: 52%;
+        height: 10%;
+        border-radius: 8px;
+        top: 82%;
+        left: 128%;
+        transform: translate(-50%, -50%);
+        color: white;
+        background-color: #634C9F;
+        font-size: 16px;
+        font-weight: 700;
+        z-index: 10;
+        transition: transform 0.3s ease, left 0.3s ease; 
+   
+    &.move-right-button{
+        top: 82%;
+        left: 242%;
+        width: 218%;
+    }
+   } 
+ }
+  
+  .ifHome{
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: #E5E7EB;
+    width: 20%;
+    // border-radius: 8px 8px 0px 0px;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8vw;
+    height: 6.4vh;
+
+}
+.arrowToRight{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 77%;
+}
+.allCategory{
+    color:#030712;
+    font-size: 15px;
+    font-weight: 600;
+}
+.menuIcon{
+    padding-left: 1.4vw;
+}
+ // ==================== second Section
+ .secondSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.4%;
+    padding: 4vh 8.3vh 4vh 8.3vh;
+    border-bottom: #E5E7EB 1px solid;
+ }
+ 
+ .payOnline{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.4%;
+ }
+ .titlePay{
+    color:#030712;
+    font-weight: 700;
+    font-size: 16px;
+ }
+ .descPay{
+    color:#6B7280;
+    font-weight: 400;
+    font-size: 13px;
+ }
+ .thirdBanner,
+ .forthBannerContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+    padding: 4vh 1vw 4vw 1vw;
+    width: 96.9%;
+    justify-content: center;
+ }
+ .arrivals{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0vh 4vw 0vw 8vh;
+ }
+ .cardsMarket,
+ .cardsMarket2{
+    display: flex;
+    flex-direction: row;
+    margin: 2vh 4vw 2vh 4vw;
+}
+ .cardContainer,
+ .secondCardContainer,
+ .cardContainer2{
+    border: #E5E7EB 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 4vh;
+    gap: 2vh;
+    width: 18%;
+    justify-content: flex-end;
+ }
+ .firstCard{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+ }
+ .lastCard{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+ }
+ .cardTitle,
+ .leftStock{
+    color: #030712;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    letter-spacing: -0.28px;
+    text-align: left;
+ }
+ .addToChart{
+    border: 1px #634C9F solid;
+    outline: none;
+    background: #FFFFFF;
+    padding: 1.7vh;
+    border-radius: 30px;
+    width: 10.6vw;
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 700;
+    font-size: 13px;
+    color: #634C9F;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .price{
+    font-size: 22px;
+    color:#DC2626;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+ }
+.discountNum,
+.discountNum2{
+    position: absolute;
+    top: 186%;
+    background-color: #DC2626;
+    color: #FEF2F2;
+    padding: 1.3vh;
+    border-radius: 30px;
+}
+.discountNum2{
+    top: 0%;
+    position: relative;
+    width: 1.8vw;
+
+}
+.discountAmount{
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.3199999928474426px;
+    text-align: center;
+}
+.preValue{
+    color: #111827;
+    text-decoration: line-through;
+    font-size: 16.1px;
+    margin-left: 0.6vw;
+    font-weight: 600;
+}
+.secondCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.secondCardsMarket{ 
+    width: 31%;
+    height: auto;
+}
+.secondCardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 88%;
+    justify-content: space-between;
+    gap: 15%;
+}
+.secondDiscountNum {
+    position: relative;
+    top: -78%;
+    background-color: #DC2626;
+    color: #FEF2F2;
+    padding: 1.3vh;
+    border-radius: 30px;
+    width: 15%;
+    left: -7%;
+}
+.secondCardForm{
+    display: flex;
+    flex-direction: column;
+    /* gap: 6%; */
+    justify-content: space-between;
+}
+.favIcon2{
+    position: relative;
+    top: -88%;
+    left: 90%;
+    cursor: pointer;
+}
+
+.secondCardTitle{
+    color:#030712;
+    font-size: 14px;
+    font-weight: 600;
+}
+.date-container{
+    display: flex;
+    justify-content: center;
+    gap: 2vh;
+}
+.datePart{
+    border: 1px #E5E7EB solid;
+    padding: 5px;
+    border-radius: 6px;
+    color: #4B5563;
+    font-weight: 600;
+}
+.cardContainer2{
+    width: 44.2%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.9vh;
+    gap: 0.7vh;
+    justify-content: space-between;
+    padding-bottom: 4.2vh;
+}
+.cardContainer2 > img {
+    width: 150px;   
+    height: 150px; 
+    display: block; 
+    margin: 0vh 2vw 0vh 2vw;   
+  }
+.cardsMarket2{
+    margin: 2vh 0vw 0vh 0vw;
+    width: 34%;
+    flex-wrap: wrap;
+    height: 80.6%;
+}
+.sixthContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 4vh;
+}
+.sixthBannerContainer{
+    display: flex;
+    flex-direction: column;
+    width: 25.9%;
+    img {
+        max-width: 100%;        
+        max-height: 100%;       
+        object-fit: contain;    
+      }
+}
+.ratingContainer,
+.picAndName{
+    display: flex;
+    flex-direction: row;
+    
+}
+.ratingContainer{
+    justify-content: center;
+    padding: 2vh 0vw 2vh 0vw;
+}
+.picAndName{
+    border-bottom:  1px #E5E7EB solid;
+    margin: 2vh;
+    padding-bottom: 2vh;
+
+}
+.ratingCard{
+    border: 1px #E5E7EB solid;
+    display: flex;
+    flex-direction: column;
+    
+}
+.profileRate{
+    border-radius: 8px;
+}
+.accountName {
+    font-weight: 700;
+    font-size: 15px;
+    color: #030712;
+}
+.nameAndFeature{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    margin: 1.5vh 2vw 0vh 1.9vw;
+}
+.featureRate {
+    font-weight: 400;
+    font-size: 12px;
+    color: #6B7280;
+}
+.ratingForm{
+    display: flex;
+    flex-direction: row;
+}
+.formRate{
+    display: flex;
+    flex-direction: column;
+    border: 1px #E5E7EB solid;
+    width: 23%;
+    height: 34vh;
+
+}
+.commentBox {
+    font-size: 12px;
+    font-weight: 400;
+    color: #030712;
+}
+.commentText{
+    padding: 1vh 2vw 2vh 1vw;
+}

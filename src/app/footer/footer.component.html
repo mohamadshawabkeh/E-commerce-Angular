@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="firstSection" style="margin: 0% 5% 0% 5%; border-bottom: 1px #eae2e2 solid; display: flex; flex-direction: row; gap: 12%; padding: 3% 0% 4% 0%;">
+      <div class="joinSection" style="padding: 0% 27% 0% 0%;">
+        <p class="joinOur" style="font-size: 20px; font-weight: 800; word-spacing: -0.4px; color: #111827;">
+          Join our newsletter for £10 offs
+        </p>
+        <p class="joinSmall" style="font-size: 13px; color: #6B7280; word-spacing: -0.32px;">
+          Register now to get latest updates on promotions & coupons. Don’t worry, we not spam!
+        </p>
+      </div>
+      <div class="sendEmail" style="display: flex; flex-direction: column; gap: 1vh; width: 70%;">
+        <div class="sendEmailContainer" style="display: flex; flex-direction: row;">
+          <input type="text" class="sendEmailplaceholder" placeholder="Send your Email here" style="width: 82%; padding: 16px; border-bottom-left-radius: 12px; border-top-left-radius: 12px; border: none;">
+          <button class="sendEmailbutton" style="padding: 16px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; color: white; background-color: #634C9F; border: none;">Send</button>
+        </div>
+        <div class="textAlign" style="display: flex; flex-direction: row;">
+          <p class="discriptionText" style="width: 100%;">
+            By subscribing you agree to our <span class="terms" style="font-size: 11px; color: #634C9F; word-spacing: -0.32px; cursor: pointer;"> 
+              Terms & Conditions and Privacy & Cookies Policy.
+            </span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  
+    <div class="helpSection" style="gap: 2%;border-bottom: 1px #eae2e2 solid; margin: 0% 5% 0% 5%; padding: 3% 0% 4% 0%; height: auto; display: flex; flex-direction: row;">
+            <div class="helpContainer" style="width: 25%;gap: 3vh;display: flex;flex-direction: column;">
+                <p style="color: #111827; font-size: 14px; font-weight: 600;word-spacing: -0.32px;">
+                 Do you need help?
+                 </p> 
+                 <p style="font-size: 13px;color: #6B7280; word-spacing: -0.32px;">
+                     Autoseligen syr. Nek diarask fröbomba. Nör antipol kynoda nynat. Pressa fåmoska.
+                 </p>
+                 <div class="callContainer" style="display: flex; flex-direction: row; gap: 19px;">
+                        <img [src]="callIcon" alt="callPhoto" style="height: 28px;width: 28px;">
+                        <div style="flex-direction: column; display: flex;">
+                            <p style="font-size: 13px;color: #6B7280; word-spacing: -0.32px;" >Sunday-Thursday: 08am-9pm</p>
+                            <p style="font-size: 20px;font-weight: 800; word-spacing: -0.4px; color: #111827;" >+962 7755 2 7474</p>
+                        </div>
+                 </div>
+                 <div class="callContainer" style="display: flex; flex-direction: row; gap: 19px;">
+                        <img [src]="emailIcon" alt="emailIcon" style="height: 28px;width: 28px;">
+                        <div style="flex-direction: column; display: flex; width: 61%;">
+                            <p style="font-size: 13px;color: #6B7280; word-spacing: -0.32px;" >Need help with your order?</p>
+                            <p style="font-size: 14px;font-weight: 800; word-spacing: -0.4px; color: #111827;word-wrap: break-word;" >{{email}}</p>
+                        </div>
+     
+    </div>
+  </div>
+  <div *ngFor="let section of sections" class="helpContainer" style="width: 20%; gap: 4vh; display: flex; flex-direction: column;">
+    <p style="color: #111827; font-size: 14px; font-weight: 600; word-spacing: -0.32px;">{{ section.title }}</p>
+    <div style="display: flex; gap: 7px; flex-direction: column;">
+      <p *ngFor="let item of section.items" style="font-size: 13px; color: #6B7280; word-spacing: -0.32px; cursor: pointer;">{{ item }}</p>
+    </div>
+  </div>
+  <div class="helpContainer" style="width: 25%;gap: 3vh;display: flex;flex-direction: column;">
+    <p style="color: #111827; font-size: 14px; font-weight: 600;word-spacing: -0.32px;">Download our app </p> 
+     <div class="callContainer" style="display: flex; flex-direction: row; gap: 19px;">
+            <img [src]="googlePlay" alt="callPhoto" >
+            <div style="flex-direction: column; display: flex;">
+                <p style="font-size: 13px;color: #6B7280; word-spacing: -0.32px;" >Download App Get -10% Discount</p>
+            </div>
+     </div>
+     <div class="callContainer" style="display: flex; flex-direction: row; gap: 19px;">
+            <img [src]="appStore" alt="callPhoto" >
+            <div style="flex-direction: column; display: flex;">
+                <p style="font-size: 13px;color: #6B7280; word-spacing: -0.32px;" >Download App Get -20% Discount</p>
+            </div>
+        </div>
+        <div class="socialMedia" style="display: flex; gap: 17px; flex-direction: column;">
+            <p style="font-size: 12px; color: #111827; padding-top: 20px;">Follow us on social media:</p>
+            <div style="display: flex; flex-direction: row;gap: 4px;">
+                <img [src]="facebookIcon" alt="callPhoto" >
+                <img [src]="twitterIcon" alt="callPhoto" >
+                <img [src]="instaIcon" alt="callPhoto" >
+                <img [src]="linkedIcon" alt="callPhoto" >
+            </div>
+        </div>
+    </div>
+  </div>
+  <div style="gap: 2%;border-bottom: 1px #eae2e2 solid; margin: 0% 5% 0% 5%; padding: 3% 0% 4% 0%; height: auto; display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row; gap: 22%; width: 100%;justify-content: space-between;">
+        <div>
+            <p style="font-size: 12px;">Copyright 2024 © Grogin WooCommerce WordPress Theme. All right reserved. Powered by <span style="color: #634C9F; cursor: pointer;">KLBTheme</span>.</p>
+            <div class="visaSide">
+              <img [src]="visaIcon" alt="callPhoto" >
+              <img [src]="visa2Icon" alt="callPhoto" >
+              <img [src]="visa3Icon" alt="callPhoto" >
+              <img [src]="visa4Icon" alt="callPhoto" >
+              <img [src]="visa5Icon" alt="callPhoto" >
+
+            </div>
+        </div>
+        <div style="display:flex; font-size: 12px;">
+            <p class="hyper-text-last">Terms and Conditions</p>
+            <p class="hyper-text-last">Privacy Policy</p>
+            <p class="hyper-text-last">Order Tracking</p>
+        </div>
+
+    </div>
+
+</div>
+</div>
+  

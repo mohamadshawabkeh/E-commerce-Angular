@@ -1,0 +1,424 @@
+.mainHome,
+.priceBox,
+.filterBut,
+.showingResultBar{
+    display: flex;
+    flex-direction: row;
+}
+.sideNav,
+.checkBoxSection{
+    display: flex;
+    flex-direction: column;
+    
+}
+.sideNav{
+    width: 21%;
+}
+.mainHome{
+    justify-content: center;
+}
+.route{
+    color: #9CA3AF;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.32px;
+    margin: 3vh 0vw 3vh 0vw;
+
+}
+.widgetText{
+color: #030712;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: -0.2800000011920929px;
+margin: 0vh 0vw 3vh 0vw;
+
+}
+.priceBox{
+    justify-content: space-between;
+    width: 82%;
+}
+.price{
+    outline: none;
+    height: 1.6vh;
+    width: 5.7vw;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    padding: 1.6vh;
+}
+.priceText{
+    font-size: 12px;
+    font-weight: 400;
+    color: #6B7280;
+
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* WebKit/Blink */
+    margin: 0; /* Optional */
+  }
+  
+.inBetween{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.2vh;
+}
+.filterBut{
+    justify-content: space-between;
+    width: 83%;
+    margin: 0;
+    align-items: center;
+    padding-bottom: 2.3vh;
+    border-bottom: 1px solid #D1D5DB;
+}
+.priceRange{
+    margin: 0 !important;
+    color: #030712;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.3199999928474426px;
+    text-align: left;
+}
+.filterButton{
+    border: none;
+    outline: none;
+    padding: 1.3vh;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.2800000011920929px;
+    text-align: center;
+    cursor: pointer;
+}
+.checkBoxSection{
+    padding: 2vh 0vw 3vh 0vw;
+    width: 83%;
+    border-bottom: 1px solid #D1D5DB;
+    gap: 1.6vh;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.0470588235);
+    border-radius: 4px;
+    accent-color: #634C9F;
+
+    & + label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #030712; 
+        display: flex;
+        color: #030712;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &:checked + label {
+        accent-color: #634C9F;
+        color: #634C9F;
+    }
+  }
+.labelText{
+    font-size: 14px;
+    font-weight: 700;
+    color: #030712;
+}
+.labelText{
+    margin: 0 !important;
+}
+.checkbox-item{
+    display: flex;
+    flex-direction: row;
+}
+.categories{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.labelContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.categories.activeCategories .labelText {
+    color: #634C9F; 
+  }
+  .colorSection,
+  .brandSection {
+    margin: 2vh 0vw 2vh 0vw;
+    border-bottom: 1px solid #D1D5DB;
+    padding-bottom: 2vh;
+    width: 83%;
+  }
+  
+  .colorList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    flex-direction: column;
+  }
+  
+  .colorItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .colorDot {
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px; 
+  }
+  
+  .colorName {
+    font-size: 14px;
+    font-weight: 400;
+    color: #030712; 
+
+  }
+  .mainContainer{
+    width: 70%;
+    padding: 9vh 0vw 0vh 0vw;
+  }
+  .shopBanner{
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    padding-bottom: 0.8vh;
+  }
+  .showingResultBar{
+    width: 100%;
+    background-color: #F3F4F6;
+    border-radius: 8px;
+        display: flex;
+    align-items: center;
+  }
+  .showingText{
+     /* height: 7vh; */
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 400;
+    padding: 3vh;
+    width: 58%;
+  }
+  .sortText{
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 400;
+    width: 15%;
+  }
+  .insideSort{
+    color:#020617;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .showSection{
+    width: 20%;
+    border-left: 1px solid #D1D5DB;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .sortText2{
+    width: 67%;
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 400;
+    padding-left: 1.3vh;
+  }
+  .arrange,
+  .column{
+    cursor: pointer;
+  }
+  .cardContainer,
+  .secondCardContainer,
+  .cardContainer2{
+     border: #E5E7EB 1px solid;
+     display: flex;
+     flex-direction: column;
+     padding: 4vh;
+     gap: 2vh;
+     width: 19%;
+     justify-content: space-between;
+  }
+  .cardContainerColumn{
+     border: #E5E7EB 1px solid;
+     display: flex;
+     flex-direction: row;
+     padding: 4vh;
+     gap: 2vh;
+     width: 19%;
+     justify-content: space-between;
+     width: 93%;
+  }
+  .discountNumColumn{
+    position: relative;
+    background-color: #DC2626;
+    color: #FEF2F2;
+    padding: 1.3vh;
+    border-radius: 30px;
+    width: 4%;
+    height: 4%;
+  }
+  .cardInfo{
+    display: flex;
+    gap: 10%;
+    flex-direction: column;
+    width: 50%;
+  }
+  .cardsMarket{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vh 0vw 2vh 0vw;
+  }
+  .secondCardsMarket{ 
+    width: 31%;
+    height: auto;
+}
+.secondCardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 88%;
+    justify-content: space-between;
+    gap: 15%;
+}
+.discountNum{
+    position: relative;
+    // top: 186%;
+    background-color: #DC2626;
+    color: #FEF2F2;
+    padding: 1.3vh;
+    border-radius: 30px;
+    width: 25%;
+    top: -47%;
+}
+.discountAmount{
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.3199999928474426px;
+    text-align: center;
+}
+.cardTitle,
+.leftStock{
+   color: #030712;
+   font-family: Inter;
+   font-size: 13px;
+   font-weight: 600;
+   line-height: 18.2px;
+   letter-spacing: -0.28px;
+   text-align: left;
+}
+.priceItem{
+    font-size: 22px;
+    color:#DC2626;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    display: flex;
+    color: #DC2626;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    align-items: center;
+ }
+ .preValue{
+    color: #111827;
+    text-decoration: line-through;
+    font-size: 16.1px;
+    margin-left: 0.6vw;
+    font-weight: 600;
+}
+.chartStock{
+    display: flex;
+    align-items: center;
+    gap: 2vh
+}
+.chart{
+    width:36px;
+    height:34px;
+}
+.inStock{
+   color: #16A34A;
+font-size: 13px;
+font-weight: 700;
+}
+.ratingContainer{
+    display: flex;
+    gap: 9%;
+    align-items: center;
+}
+.columnLayout .cardsMarket {
+    padding: 2vh 0vw 2vh 0vw;
+    flex-direction: column !important;
+}
+  .arrangeLayout {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2vh 0vw 2vh 0vw;
+  }
+  .arrange,.column{
+    width: 20px;
+    height: 20px;
+  }
+  .arrayContainers{
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    align-items: center;
+  }
+  .array-background{
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #D1D5DB;
+    align-items: center;
+    border-radius: 8px;
+  }
+  .colorSection {
+    .colorList {
+      .colorItem {
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 10px;
+        padding: 0.7vh 0.4vw;
+        .colorDot {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+  
+        .colorName {
+          display: inline-block;
+          vertical-align: middle;
+        }
+  
+        &.selected {
+          background-color: #F3F4F6;
+          color: white;
+          border-radius: 8px;
+          padding: 0.7vh 0.4vw;
+        }
+      }
+    }
+  }
+  .clearFilter{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    padding: 2vh 0vw;
+  }
+  .clearAll{
+    cursor: pointer;
+    font-size: 14px;
+    color: #555555;
+    font-weight: 500;
+  }
