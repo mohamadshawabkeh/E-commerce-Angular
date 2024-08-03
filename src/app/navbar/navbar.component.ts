@@ -56,6 +56,9 @@ export class NavbarComponent {
   navigateToContact() {
     this.router.navigate(['/contact']);
   }
+  navigateToCheckout() {
+    this.router.navigate(['/checkout']);
+  }
   onAllCategoryClick() {
     this.clickedAllCategory=!this.clickedAllCategory;
     this.menuService.toggleMenu();

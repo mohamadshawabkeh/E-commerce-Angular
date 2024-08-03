@@ -13,12 +13,19 @@
             <p class="globalTime">sec. </p>
         </div>
     </div>
-    <div class="selectorSection" style="width: 95.3%; height: 15%; display: flex; flex-direction: row; gap: 0.5%; margin-left: 3%; padding: 0.8%;">
-        <p class="selectorText" style="font-weight: 600;">About Us</p>
-        <p class="selectorText" style="font-weight: 600;">My account</p>
-        <p class="selectorText" style="font-weight: 600;">Wishlist</p>  
-        <p class="selectorText2" > We deliver to you every day from</p>
-        <p class="selectorText" style="color: #EA580C; font-weight: 800; "> 7:00 to 23:00</p>
+    <div class="firstNavContainer">
+        <div class="selectorSection">
+            <p class="selectorText" style="font-weight: 600;" (click)="navigateToContact()">About Us</p>
+            <p class="selectorText" style="font-weight: 600;">My account</p>
+            <p class="selectorText" style="font-weight: 600;">Wishlist</p>  
+            <p class="selectorText2" > We deliver to you every day from</p>
+            <p class="selectorText" style="color: #EA580C; font-weight: 800; "> 7:00 to 23:00</p>
+        </div>
+        <div class="englishSection">
+            <p class="selectorText">English</p>
+            <p class="selectorText">USD</p>
+            <p class="selectorText">Order Tracking</p>
+        </div>
     </div>
     <div class="searchbarSection" style="width: 98.4%; height: auto; padding: 2%;padding: 0.8%; border-top: 1px #eae2e2 solid;">
         <div class="searchBarContainer" style="margin-left: 3%; display: flex; flex-direction: row; gap: 1.2%; ">
@@ -35,7 +42,7 @@
                    <p class="signAccount">Sign in Account</p> 
                 </div>
             <img [src]="favIcon" alt="photo" class="favIcon">
-            <img [src]="cartIcon" alt="photo" class="cartIcon">
+            <img [src]="cartIcon" alt="photo" class="cartIcon" (click)="navigateToCheckout()">
         </div>
     </div>
     <div class="toolsSection" style="display: flex; flex-direction: row;margin-left: 4%;justify-content: space-between;">
@@ -59,7 +66,7 @@
             </p>
             <p class="toolText">Fruits & Vegetables</p>
             <p class="toolText">Beverages</p>
-            <p class="toolText">Blog</p>
+            <p class="toolText"(click)="navigateToCheckout()">Checkout</p>
             <p class="toolText"  [ngClass]="{'activeSet': isContactRoute()}" (click)="navigateToContact()">Contact</p>
         </div>
         <div class="rightSide" style="display: flex;flex-direction: row;gap: 2.9vh;width: 34%;">

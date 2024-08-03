@@ -17,10 +17,21 @@
                     <div class="locationText">
                         <p class="mainLocation">Jordan</p>
                         <p class="mainLocation2">Amman</p>
-                        <p class="mainLocation3">Almadina Str</p>
+                        <p class="mainLocation3">Almadina Street</p>
+                        <p class="phoneText" class="mainLocation2">+962 7755 2 7474</p>
+                        <p class="emailText" (click)="sendEmail()">{{ email }}</p>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
+        <div class="followSection">
+            <p class="followUs">Follow us:</p>
+            <img [src]="linkedIcon" alt="photo" class="socialIcon" (click)="navigateToLinkedIn()">
+            <img [src]="twitterIcon" alt="photo" class="socialIcon" (click)="navigateToGithub()" style="width: 33px;">
+            <img [src]="facebookIcon" alt="photo" class="socialIcon" (click)="navigateToFacebook()">
+            <img [src]="instaIcon" alt="photo" class="socialIcon" (click)="navigateToInsta()">
+
+        </div>
+        
     </div>
 </div>
