@@ -24,44 +24,43 @@
         <div class="searchBarContainer" style="margin-left: 3%; display: flex; flex-direction: row; gap: 1.2%; ">
             <img [src]="siteLogo" alt="photo" class="logoImg">
             <img [src]="pinIcon" alt="photo" class="pinIcon">
-            Deliver to <span style="font-weight: 800;">all</span> 
+            <div class="deliverPlace">
+                <p class="deliverTo"> Deliver to</p>
+                <span class="deliverTo" style="font-weight: 800;">all</span> 
+            </div>
             <input type="text" class="searchBar" placeholder="Search for products, categories or brands..." style="width: 60%; background-color: #F3F4F6;">
-            <img [src]="searchIcon" alt="photo" style="position: relative;right: 65px;top: 0px;">
+            <img [src]="searchIcon" class="searchIcon" alt="photo" style="position: relative;right: 65px;top: 0px;">
                 <div class="signInAccount" (click)="navigateToSign()" style="cursor: pointer;">
                     <img [src]="profileIcon" alt="photo" class="profileIcon" >
-                    Sign in Account
-
+                   <p class="signAccount">Sign in Account</p> 
                 </div>
             <img [src]="favIcon" alt="photo" class="favIcon">
             <img [src]="cartIcon" alt="photo" class="cartIcon">
         </div>
-
     </div>
     <div class="toolsSection" style="display: flex; flex-direction: row;margin-left: 4%;justify-content: space-between;">
-        <div class="ifHome" *ngIf="currentRoute === '/home'">
-            <img [src]="allCategory" alt="photo" class="menuIcon" (click)="onAllCategoryClick()">
-            <div class="arrowToRight">
-                <p class="allCategory" (click)="onAllCategoryClick()">
+        <div class="ifHome" *ngIf="currentRoute === '/home'" (click)="onAllCategoryClick()" style="cursor: pointer;">
+            <img [src]="allCategory" alt="photo" class="menuIcon" >
+            <div class="arrowToRight" >
+                <p class="allCategory" >
                   All Category
                 </p>  
-                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left: 0.4vw; rotate: 270deg;" (click)="onAllCategoryClick()">
+                <img [src]="downArrowBlack" alt="photo" *ngIf="!this.clickedAllCategory" class="favIcon" style=" rotate: 270deg;" >
+                <img [src]="downArrowBlack" alt="photo" *ngIf="this.clickedAllCategory" class="favIcon" style=" rotate: 360deg;" >
             </div>
         </div>
-        
         <div class="leftSide" style="display: flex;flex-direction: row;gap: 2vw;">
             <p class="toolText" [ngClass]="{'activeSet': isHomeRoute()}" (click)="navigateToHome()">
                 Home
                 <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left: 0.4vw" (click)="navigateToHome()">
-            </p>
-            
-            
+            </p>          
             <p class="toolText" [ngClass]="{'activeSet': isShopRoute()}" (click)="navigateToShop()" >Shop
                 <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left:0.4vw">
             </p>
             <p class="toolText">Fruits & Vegetables</p>
             <p class="toolText">Beverages</p>
             <p class="toolText">Blog</p>
-            <p class="toolText">Contact</p>
+            <p class="toolText"  [ngClass]="{'activeSet': isContactRoute()}" (click)="navigateToContact()">Contact</p>
         </div>
         <div class="rightSide" style="display: flex;flex-direction: row;gap: 2.9vh;width: 34%;">
             <p class="toolText">Trending Products
@@ -71,7 +70,7 @@
             <div class="saleSection" style=" display: flex;">
                 <p class="toolText3">SALE
                 </p>
-                <img [src]="downArrowRed" alt="photo" class="favIcon">
+                <img [src]="downArrowRed" alt="photo" class="favIcon" style="padding-left: 0.4vw; width: 10px;">
             </div>
         </div>
     </div>

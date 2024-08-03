@@ -8,7 +8,7 @@
             <button class="shopNow"  [ngClass]="{'move-right-button': showMenu}" (click)="navigateToShop()" style="cursor: pointer;">Shop Now</button>
         </div>
         <div class="category-menu" *ngIf="showMenu">
-            <div class="ifHome" *ngFor="let item of menuItems">
+            <div class="ifHome" *ngFor="let item of menuItems" style="cursor: pointer;">
                 <img [src]="item.allCategory" alt="" class="menuIcon">
                 <div class="arrowToRight">
                     <p class="allCategory">
@@ -48,17 +48,18 @@
         border: 1px #E5E7EB solid;
         border-radius: 252px;
         color: #212529;
-        font-weight: 700;">View All</button>
+        font-weight: 700;
+        cursor: pointer;">View All</button>
       </div>
       <div class="cardsMarket" *ngIf="products?.length">
         <div class="cardContainer" *ngFor="let product of fiveProducts let i = index"
         [ngClass]="{ 'firstCard': isFirst(i), 'lastCard': isLast(i) }">
-        <img [src]="product.image" alt="" style="width: 177px; height: 177px;">
         <div class="discountNum"> 
             <p class="discountAmount">
                {{ randomIncrementNumber }}%
         </p> 
     </div>
+        <img [src]="product.image" alt="" style="width: 177px; height: 177px;">
           <p class="cardTitle">{{ product.title }}</p>
           <div class="starRating">
             <ng-container *ngFor="let _ of starArray(getStarRating(product.rating.rate).fullStars)">
@@ -98,7 +99,8 @@
         border: 1px #E5E7EB solid;
         border-radius: 252px;
         color: #212529;
-        font-weight: 700;">View All</button>
+        font-weight: 700;
+        cursor: pointer;">View All</button>
       </div>
       <div class="secondCards">
         <div class="secondCardsMarket" *ngFor="let product of sixProducts let i = index">
@@ -165,7 +167,8 @@
         border: 1px #E5E7EB solid;
         border-radius: 252px;
         color: #212529;
-        font-weight: 700;">View All</button>
+        font-weight: 700;
+        cursor: pointer;">View All</button>
       </div>
       <div class="sixthContainer">
         <div class="cardsMarket2" *ngIf="products?.length">
@@ -252,7 +255,8 @@
         border: 1px #E5E7EB solid;
         border-radius: 252px;
         color: #212529;
-        font-weight: 700;">View All</button>
+        font-weight: 700;
+        cursor: pointer;">View All</button>
       </div>
         <div class="ratingContainer">
           <ng-container  class="ratingCard" *ngFor="let account of fakeAccount"> 

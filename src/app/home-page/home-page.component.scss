@@ -69,7 +69,7 @@
  }
   
   .ifHome{
-    border-width: 1px 1px 0px 1px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: #E5E7EB;
     width: 20%;
@@ -129,7 +129,7 @@
     display: flex;
     flex-direction: row;
     gap: 1.5vw;
-    padding: 4vh 1vw 4vw 1vw;
+    padding: 2vh 1vw 2vw 1vw;
     width: 96.9%;
     justify-content: center;
  }
@@ -154,7 +154,7 @@
     padding: 4vh;
     gap: 2vh;
     width: 18%;
-    justify-content: flex-end;
+    justify-content: space-evenly;
  }
  .firstCard{
     border-top-left-radius: 8px;
@@ -190,6 +190,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
  }
  .price{
     font-size: 22px;
@@ -199,8 +200,9 @@
  }
 .discountNum,
 .discountNum2{
-    position: absolute;
-    top: 186%;
+    width: 19% !important;
+    position: relative;
+    top: 0%;
     background-color: #DC2626;
     color: #FEF2F2;
     padding: 1.3vh;
@@ -230,6 +232,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 2vh 0vw;
 }
 .secondCardsMarket{ 
     width: 31%;
@@ -249,7 +252,7 @@
     color: #FEF2F2;
     padding: 1.3vh;
     border-radius: 30px;
-    width: 15%;
+    width: 19%;
     left: -7%;
 }
 .secondCardForm{
@@ -363,6 +366,13 @@
 .ratingForm{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 1.7vh;
+}
+.rateNum{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0px 0px 4px 0px;
 }
 .formRate{
     display: flex;

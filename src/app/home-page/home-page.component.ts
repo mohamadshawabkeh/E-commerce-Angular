@@ -37,23 +37,23 @@ export class HomePageComponent implements OnInit, OnDestroy {
   sixProducts:any;
   fourProducts:any;
   menuItems = [
-    { id: 1, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Fruits & Vegetables', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
-    { id: 2, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Meats & Seafood', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
-    { id: 3, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Breaksfast & Dairy', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
-    { id: 4, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Breads & Bakery', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
-    { id: 5, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Beverages', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
-    { id: 6, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Frozen Foods',  },
-    { id: 7, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Biscuits & Snacks',  },
-    { id: 8, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Grocery & Staples',  },
-    { id: 9, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Household Needs', },
-    { id: 10, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Healthcare',  },
-    { id: 11, allCategory: 'assets/icons/navbar/allCategory.svg', categoryText: 'Baby & Pregnancy',  }
+    { id: 1, allCategory: 'assets/icons/home/fruit.svg', categoryText: 'Fruits & Vegetables', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
+    { id: 2, allCategory: 'assets/icons/home/meat.svg', categoryText: 'Meats & Seafood', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
+    { id: 3, allCategory: 'assets/icons/home/breakfast.svg', categoryText: 'Breaksfast & Dairy', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
+    { id: 4, allCategory: 'assets/icons/home/bread.svg', categoryText: 'Breads & Bakery', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
+    { id: 5, allCategory: 'assets/icons/home/bever.svg', categoryText: 'Beverages', arrowPhoto:"assets/icons/navbar/downArrowBlack.svg" },
+    { id: 6, allCategory: 'assets/icons/home/frozen.svg', categoryText: 'Frozen Foods',  },
+    { id: 7, allCategory: 'assets/icons/home/snack.svg', categoryText: 'Biscuits & Snacks',  },
+    { id: 8, allCategory: 'assets/icons/home/stap.svg', categoryText: 'Grocery & Staples',  },
+    { id: 9, allCategory: 'assets/icons/home/house.svg', categoryText: 'Household Needs', },
+    { id: 10, allCategory: 'assets/icons/home/health.svg', categoryText: 'Healthcare',  },
+    { id: 11, allCategory: 'assets/icons/home/baby.svg', categoryText: 'Baby & Pregnancy',  }
 ];
 comSection = [
     { id: 1, imageComSection: 'assets/icons/home/payOnline.svg' },
-    { id: 2, imageComSection: 'assets/icons/home/payOnline.svg' },
-    { id: 3, imageComSection: 'assets/icons/home/payOnline.svg'},
-    { id: 4, imageComSection: 'assets/icons/home/payOnline.svg' },
+    { id: 2, imageComSection: 'assets/icons/home/newStock.svg' },
+    { id: 3, imageComSection: 'assets/icons/home/qualityA.svg'},
+    { id: 4, imageComSection: 'assets/icons/home/delivery.svg' },
 ];
 fakeAccount = [
   { id: 1, profileName: 'Mohammad', rate:5, comment:"Good quality product can only be found in good stores" },
