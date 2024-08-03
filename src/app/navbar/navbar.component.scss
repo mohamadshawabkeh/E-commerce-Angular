@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 30%;
+    height: 27%;
     border-bottom: 1px #eae2e2 solid;
 }
 .globalNotification{
@@ -28,14 +28,30 @@
     font-weight: 600;
 }
 // ==============================
-// .selectorSection{
-//     padding: 0.8%;
-//     border-top: 1px #eae2e2 solid;
-// }
+.firstNavContainer{
+    display: flex;
+    margin-left: 3.8vw;
+    padding: 2vh 0vh;
+}
+.selectorSection{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5%;
+    
+}
+.englishSection{
+    width: 13%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
 .selectorText,
 .selectorText2{
     color:#6B7280;
     font-family: 'Inter',sans-serif;
+    font-size: 12px;
+    cursor: pointer;
 }
 .selectorText2{
     margin-left: 10px;
