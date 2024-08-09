@@ -41,8 +41,14 @@
                     <img [src]="profileIcon" alt="photo" class="profileIcon" >
                    <p class="signAccount">Sign in Account</p> 
                 </div>
+           <div class="cartSection">
             <img [src]="favIcon" alt="photo" class="favIcon">
-            <img [src]="cartIcon" alt="photo" class="cartIcon" (click)="navigateToCheckout()">
+            <span class="cartNumber">0</span>
+        </div>
+            <div class="cartSection">
+                <img [src]="cartIcon" alt="photo" class="cartIcon" (click)="navigateToCheckout()">
+                <span class="cartNumber">{{cartNumber}}</span>
+            </div>
         </div>
     </div>
     <div class="toolsSection" style="display: flex; flex-direction: row;margin-left: 4%;justify-content: space-between;">

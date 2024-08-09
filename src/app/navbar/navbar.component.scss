@@ -141,6 +141,25 @@
 .profileIcon{
     width: 27px;
 }
+.cartSection{
+    display: flex;
+    align-items: center;
+}
+.cartNumber{
+    background-color: #DC2626;
+    position: relative;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    border-radius: 50%;
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    top: -12px;
+    left: -8px;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 767px) {
     .globalNotification{
         height:24px;

@@ -4,6 +4,7 @@ import { MenuService } from '../services/menu.service';
 import { Subscription } from 'rxjs';
 import { FoodProductsService } from '../services/food-products.service';
 import { Router } from '@angular/router';
+import { CartConfigService } from '../services/cart-config.service';
 
 @Component({
   selector: 'app-home-page',
@@ -70,7 +71,7 @@ fakeAccount = [
   discountPercentage: any;
 
   constructor(private menuService: MenuService, private foodProductsService: FoodProductsService,
-    private cdr: ChangeDetectorRef,private router: Router ) {}
+    private cdr: ChangeDetectorRef,private router: Router, private cartService: CartConfigService ) {}
 
   ngOnInit() {
     this.menuSubscription = this.menuService.menuState$.subscribe(state => {
@@ -96,6 +97,15 @@ fakeAccount = [
     if (this.menuSubscription) {
       this.menuSubscription.unsubscribe();
     }
+  }
+  addToCart(product: any) {
+    this.cartService.addToCart({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image 
+    });
+    console.log("product ->",product)
   }
   getStarRating(rating: number): { fullStars: number, halfStar: boolean } {
     const fullStars = Math.floor(rating);
