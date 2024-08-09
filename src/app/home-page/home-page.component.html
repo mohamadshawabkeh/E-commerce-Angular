@@ -79,7 +79,10 @@
             </ng-container>
            
           </p>          
-          <button class="addToChart">Add To Cart</button>
+          <button class="addToChart" (click)="addToCart(product)">Add To Cart      
+           <img [src]="plusIcon" alt="" >
+          </button>
+          
         </div>
       </div>
       <div class="forthBannerContainer">
@@ -143,7 +146,7 @@
           </ng-container>
           
         </p>          
-        <button class="addToChart">Add To Cart 
+        <button class="addToChart" (click)="addToCart(product)">Add To Cart 
           <img [src]="plusIcon" alt="" >
           
         </button>
@@ -200,7 +203,7 @@
               </ng-container>
              
             </p>          
-            <button class="addToChart">Add To Cart</button>
+            <button class="addToChart" (click)="addToCart(product)">Add To Cart</button>
           </div>
         </div>
         <div class="sixthBannerContainer" (click)="navigateToShop()">
@@ -236,7 +239,7 @@
               </ng-container>
              
             </p>          
-            <button class="addToChart">Add To Cart</button>
+            <button class="addToChart" (click)="addToCart(product)">Add To Cart</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from '../services/menu.service';
+import { CartConfigService } from '../services/cart-config.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,18 +22,25 @@ export class NavbarComponent {
   downArrowRed:string="assets/icons/navbar/downArrowRed.svg";
   downArrowHighlight:string="assets/icons/navbar/downArrowHighlight.svg";
   allCategory:string="assets/icons/navbar/allCategory.svg";
+  redCirc:string="assets/icons/navbar/redCirc.svg";
   currentRoute: string = '';
   days: number = 47;
   hours: number = 6;
   minutes: number = 55;
   seconds: number = 51;
   clickedAllCategory:boolean=false;
+  cartNumber: number = 0;
 
   private timerInterval: any;
 
-  constructor(private router: Router,private menuService: MenuService) {
+  constructor(private router: Router,private menuService: MenuService,private cartService: CartConfigService) {
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
+    });
+  }
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe(totalItems => {
+      this.cartNumber = totalItems;
     });
   }
   isHomeRoute(): boolean {
