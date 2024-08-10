@@ -1,18 +1,14 @@
 <div class="container" >
     <div class="globalNotification">
-        <p class="globalText">FREE delivery & 40% Discount for next 3 orders! Place your 1st order in.</p>
+        <p class="globalText">
+          FREE delivery & 40% Discount for next 3 orders! Place your 1st order in.
+        </p>
         <div class="timeForGlobal" style="display: flex; flex-direction: row; gap: 1%; width: 35%; align-items: center;">
-            <p class="globalTime" style="font-size: 14px;">Until the end of the sale: </p>
-            <p class="timeEdit">47</p> 
-            <p class="globalTime">days </p>
-            <p class="timeEdit">06</p>
-            <p class="globalTime">hours </p>
-            <p class="timeEdit">55</p> 
-            <p class="globalTime">minute </p>
-            <p class="timeEdit">51</p> 
-            <p class="globalTime">sec. </p>
+          <p class="globalTime">Until the end of the sale:</p>
+          <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
         </div>
-    </div>
+      </div>
+      
     <div class="firstNavContainer">
         <div class="selectorSection">
             <p class="selectorText" style="font-weight: 600;" (click)="navigateToContact()">About Us</p>
@@ -45,8 +41,8 @@
             <img [src]="favIcon" alt="photo" class="favIcon">
             <span class="cartNumber">0</span>
         </div>
-            <div class="cartSection">
-                <img [src]="cartIcon" alt="photo" class="cartIcon" (click)="navigateToCheckout()">
+            <div class="cartSection" (click)="navigateToCheckout()">
+                <img [src]="cartIcon" alt="photo" class="cartIcon" >
                 <span class="cartNumber">{{cartNumber}}</span>
             </div>
         </div>
