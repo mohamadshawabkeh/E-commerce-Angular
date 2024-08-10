@@ -104,7 +104,7 @@ fakeAccount = [
       title: product.title,
       price: product.price,
       image: product.image 
-    });
+    },1);
     console.log("product ->",product)
   }
   getStarRating(rating: number): { fullStars: number, halfStar: boolean } {

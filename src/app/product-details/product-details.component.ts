@@ -3,6 +3,7 @@ import { Component, OnInit, Renderer2,ElementRef, ViewChild } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FoodProductsService } from '../services/food-products.service';
+import { CartConfigService } from '../services/cart-config.service';
 
 @Component({
   selector: 'app-product-details',
@@ -31,7 +32,11 @@ export class ProductDetailsComponent implements OnInit  {
   sixProducts:any;
   loading: boolean = true;
 
-  constructor(private router: Router, private foodProductsService: FoodProductsService,private route: ActivatedRoute,private renderer: Renderer2,) { }
+  constructor(private router: Router, 
+    private foodProductsService: FoodProductsService,
+    private route: ActivatedRoute,
+    private renderer: Renderer2,
+    private cartConfigService: CartConfigService,) { }
   @ViewChild('chartStock') chartStock!: ElementRef;
 
   // ngOnInit(): void {
@@ -162,6 +167,19 @@ export class ProductDetailsComponent implements OnInit  {
       }
     );
   }
+  addToCart() {
+    const cartItem = {
+      id: this.product.id,
+      title: this.product.title,
+      price: this.discountedPrice || this.product.price,
+      image: this.product.image,
+    };
+    console.log("cartItem->", cartItem);
+    this.cartConfigService.addToCart(cartItem, this.quantity); 
+  
+    console.log('Product added to cart:', cartItem);
+  }
+  
 
   calculateRelated(originalPrice: number, index: number): number {
     const discountPercentage = this.randomIncrementNumber[index]; 

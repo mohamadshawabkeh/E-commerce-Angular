@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 
 interface CartItem {
   id: string;
@@ -18,31 +19,39 @@ export class CartConfigService {
   private cartSubject = new BehaviorSubject<number>(0);
 
   cartItems$ = this.cartSubject.asObservable();
-
-  constructor() {
+  constructor(private snackBar: MatSnackBar) { 
     this.loadCartFromStorage();
     this.cartSubject.next(this.getTotalItems());
   }
 
-  // Add item to the cart
-  addToCart(product: { id: string, title: string, price: number, image: string }) {
+  addToCart(product: { id: string, title: string, price: number, image: string }, quantity: number) {
     const existingItem = this.cart.find(item => item.id === product.id);
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += quantity; 
     } else {
       this.cart.push({ 
         id: product.id, 
         title: product.title, 
         price: product.price, 
         image: product.image,
-        quantity: 1 
+        quantity: quantity 
       });
     }
     this.saveCartToStorage();
     this.cartSubject.next(this.getTotalItems());
-  }
+    if (quantity == 1 ){
+      this.snackBar.open(`one of ${product.title} added to cart!`, 'Close', {
+        duration: 3000, 
+      });
 
-  // Remove item from the cart
+    }else {
+      this.snackBar.open(`${quantity} of ${product.title} added to cart!`, 'Close', {
+        duration: 3000, 
+      });
+    }
+
+  }
+  
   removeFromCart(productId: string, quantity: number = 1) {
     const itemIndex = this.cart.findIndex(item => item.id === productId);
     if (itemIndex !== -1) {
@@ -55,24 +64,17 @@ export class CartConfigService {
     this.cartSubject.next(this.getTotalItems());
   }
 
-  // Get total items in the cart
   getTotalItems(): number {
     return this.cart.reduce((total, item) => total + item.quantity, 0);
   }
-
-  // Get cart items
   getCartItems(): CartItem[] {
     return this.cart;
   }
-
-  // Save cart to local storage
   private saveCartToStorage() {
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem(this.storageKey, JSON.stringify(this.cart));
     }
   }
-
-  // Load cart from local storage
   private loadCartFromStorage() {
     if (typeof window !== 'undefined' && window.localStorage) {
       const savedCart = localStorage.getItem(this.storageKey);
