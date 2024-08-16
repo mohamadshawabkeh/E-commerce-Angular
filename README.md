@@ -45,6 +45,9 @@ The application integrates with the [Fake Store API](https://fakestoreapi.com/) 
 ## Design Resources
 
 The user interface design for the application is based on a [free Figma template](https://www.figma.com/design/2o6dtQ46i8fMsAe3jXNKaQ/75%2B-Ecommerce-Landing-Page-Templates-(Community)?node-id=6314-7685). This design provides a modern and responsive layout for the e-commerce platform.
+ ## Deployed Website
+ 
+ - link: https://e-commerce-grogin.netlify.app/home
 
 ## Further Help
 
