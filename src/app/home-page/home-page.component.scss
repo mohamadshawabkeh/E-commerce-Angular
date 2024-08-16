@@ -390,3 +390,139 @@
 .commentText{
     padding: 1vh 2vw 2vh 1vw;
 }
+@media (max-width:800px) {
+    .home-container {
+        display: flex;
+        flex-direction: row;
+     
+        .middle-image {
+            position: relative;
+            width: 8%;
+            transition: transform 0.3s ease, padding-left 0.3s ease; 
+            padding-left: 9.4vw;
+          
+            &.move-right {
+                transform: translateX(390px);
+                padding-left: 0; 
+            }
+        }
+        .category-menu {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        img {
+            display: block;
+            height: 154px;
+            width: 317px;
+          }
+      
+          .image-text,
+          .image-text2 {
+            width: 153%;
+            position: absolute;
+            top: 29%;
+            left: 184%;
+            transform: translate(-50%, -50%);
+            color: #39245F;
+            font-size: 8px;
+            font-weight: 700;
+            z-index: 10;
+            transition: transform 0.3s ease, left 0.3s ease; 
+            &.move-right-text {
+                left: 478%; 
+                width: 684%;
+    
+            }
+            &.move-right-text2 {
+                left: 478%; 
+                width: 684%;
+    
+            } 
+          
+        }
+        .image-text2{
+            font-size: 8px !important;
+            top: 53%  !important;
+            }
+        .shopNow{
+            position: absolute;
+            width: 72%;
+            height: 10%;
+            border-radius: 8px;
+            top: 75%;
+            left: 142%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background-color: #634C9F;
+            font-size: 8px;
+            font-weight: 700;
+            z-index: 10;
+            transition: transform 0.3s ease, left 0.3s ease; 
+       
+        &.move-right-button{
+            top: 82%;
+            left: 242%;
+            width: 218%;
+        }
+       } 
+     }
+    .secondSection{
+        gap: 1.4%;
+        padding: 1vh 2.3vh 1vh 2.3vh;
+    }
+    .titlePay{
+        font-size: 11px;
+    }
+    .descPay{
+        font-size: 9px;
+    }
+    .imgTalkPay{
+        height: 20px;
+        width: 20px;
+    }
+    .arrivals{
+        padding: 0vh 3vw 0vw 2vh;
+    }
+    .arrivalsContainer{
+        width: 70% !important;
+    }
+    .arrivalsText{
+        font-size: 13px !important;
+    }
+    .arrivalsNote{
+        font-size: 11px !important;
+    }
+    .buttonArrival{
+        width: 22% !important;
+    }
+     .cardsMarket{
+    display: flex;
+    flex-direction: column;
+    }
+    .cardContainer{
+    border: #E5E7EB 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 4vh;
+    gap: 2vh;
+    width: 83%;
+    justify-content: space-evenly;
+ }
+ .secondCardsMarket{
+    width: 100%;
+ }
+ .sixthBannerContainer{
+    display: none;
+ }
+//  .cardsMarket,
+ .cardsMarket2{
+    width: 50%;
+ }
+ .cardContainer2{
+    width: 100%;
+ }
+ .ratingContainer{
+    display: none;
+ }
+}
