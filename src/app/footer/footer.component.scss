@@ -19,3 +19,18 @@
     padding-top: 4%;
     gap: 3%;
 }
+@media (max-width:800px) {
+    .joinSection{
+        padding: 0% 0% 0% 0% !important;
+        width: 55% !important;
+    }
+    .helpContainer2{
+        display: none !important;
+    }
+    .footerCopy{
+        display: none !important;
+    }
+    .helpContainer{
+        width: 50% !important;
+    }
+}

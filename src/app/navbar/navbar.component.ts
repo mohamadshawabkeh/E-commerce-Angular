@@ -87,6 +87,9 @@ export class NavbarComponent implements OnInit {
   isHomeRoute(): boolean {
     return this.currentRoute === '/home';
   }
+  ischeckoutRoute(): boolean {
+    return this.currentRoute === '/checkout';
+  }
 
   isShopRoute(): boolean {
     return this.currentRoute === '/shop';

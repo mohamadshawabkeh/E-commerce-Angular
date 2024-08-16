@@ -21,7 +21,7 @@
       </div>
      <div class="secondSection" >
         <div class="payOnline" *ngFor="let item of comSection">
-            <img [src]="item.imageComSection" alt="">
+            <img [src]="item.imageComSection" alt="" class="imgTalkPay">
             <div class="talkPay">
                 <p class="titlePay">Payment only online</p>
                 <p class="descPay">Tasigförsamhet beteendedesign. Mobile
@@ -38,9 +38,9 @@
 
      </div>
       <div class="arrivals">
-        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
-            <p style="font-weight: 700; font-size: 18px; color: #030712;">New Arrivals.</p>
-            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Dont miss this opportunity at a special discount just for this week.</p>
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;" class="arrivalsContainer">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;" class="arrivalsText">New Arrivals.</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;" class="arrivalsNote">Dont miss this opportunity at a special discount just for this week.</p>
         </div>
         <button style="width: 7%;
         height: 4.9vh;
@@ -49,7 +49,7 @@
         border-radius: 252px;
         color: #212529;
         font-weight: 700;
-        cursor: pointer;">View All</button>
+        cursor: pointer;" class="buttonArrival">View All</button>
       </div>
       <div class="cardsMarket" *ngIf="products?.length">
         <div class="cardContainer" *ngFor="let product of fiveProducts let i = index"
@@ -92,9 +92,9 @@
 
       </div>
       <div class="arrivals">
-        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
-            <p style="font-weight: 700; font-size: 18px; color: #030712;">Featured Products</p>
-            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Do not miss the current offers until the end of March.</p>
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;" class="arrivalsContainer">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;"  class="arrivalsText">Featured Products</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;" class="arrivalsNote">Do not miss the current offers until the end of March.</p>
         </div>
         <button style="width: 7%;
         height: 4.9vh;
@@ -103,7 +103,7 @@
         border-radius: 252px;
         color: #212529;
         font-weight: 700;
-        cursor: pointer;">View All</button>
+        cursor: pointer;" class="buttonArrival">View All</button>
       </div>
       <div class="secondCards">
         <div class="secondCardsMarket" *ngFor="let product of sixProducts let i = index">
@@ -248,9 +248,9 @@
         width: 95.9%;">
       </div>
       <div class="arrivals">
-        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;">
-            <p style="font-weight: 700; font-size: 18px; color: #030712;">Popular Companies</p>
-            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;">Some of the new products arriving this weeks</p>
+        <div style="    display: flex; gap: 3%; width: 46%; align-items: center;" class="arrivalsContainer">
+            <p style="font-weight: 700; font-size: 18px; color: #030712;"  class="arrivalsText">Popular Companies</p>
+            <p style="font-weight: 400; font-size: 13px; color: #9CA3AF;"  class="arrivalsNote">Some of the new products arriving this weeks</p>
         </div>
         <button style="width: 7%;
         height: 4.9vh;
@@ -259,7 +259,7 @@
         border-radius: 252px;
         color: #212529;
         font-weight: 700;
-        cursor: pointer;">View All</button>
+        cursor: pointer;" class="buttonArrival">View All</button>
       </div>
         <div class="ratingContainer">
           <ng-container  class="ratingCard" *ngFor="let account of fakeAccount"> 

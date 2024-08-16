@@ -48,7 +48,7 @@
      
     </div>
   </div>
-  <div *ngFor="let section of sections" class="helpContainer" style="width: 20%; gap: 4vh; display: flex; flex-direction: column;">
+  <div *ngFor="let section of sections" class="helpContainer2" style="width: 20%; gap: 4vh; display: flex; flex-direction: column;">
     <p style="color: #111827; font-size: 14px; font-weight: 600; word-spacing: -0.32px;">{{ section.title }}</p>
     <div style="display: flex; gap: 7px; flex-direction: column;">
       <p *ngFor="let item of section.items" style="font-size: 13px; color: #6B7280; word-spacing: -0.32px; cursor: pointer;">{{ item }}</p>
@@ -79,7 +79,7 @@
         </div>
     </div>
   </div>
-  <div style="gap: 2%;border-bottom: 1px #eae2e2 solid; margin: 0% 5% 0% 5%; padding: 3% 0% 4% 0%; height: auto; display: flex; flex-direction: row;">
+  <div class="footerCopy" style="gap: 2%;border-bottom: 1px #eae2e2 solid; margin: 0% 5% 0% 5%; padding: 3% 0% 4% 0%; height: auto; display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: row; gap: 22%; width: 100%;justify-content: space-between;">
         <div>
             <p style="font-size: 12px;">Copyright 2024 © Grogin WooCommerce WordPress Theme. All right reserved. Powered by <span style="color: #634C9F; cursor: pointer;">KLBTheme</span>.</p>

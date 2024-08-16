@@ -183,9 +183,25 @@ countdown {
         gap: 4%;
 
     }
+    .rightSide{
+        display: none !important;
+    }
+    countdown {
+        font-size: 7px;
+
+        .countdown-item {
+            font-size: 7px;
+        }
+
+      }
+
     .globalTime{
         color: #E5E5E5;
         font-size: 11px;
+     }
+     .container{
+        height: 16%;
+
      }
      .timeEdit{
         font-size: 14px;
@@ -203,6 +219,7 @@ countdown {
 .toolText2,
 .toolText3{
     line-height: 8px;
+    font-size: 8px;
 }
 .toolText3{
     margin: 4px;
@@ -210,13 +227,18 @@ countdown {
     padding: 3px;
 }
 .ifHome{
-    gap: 0.1vw;
-}   
+    display: none;
+ }
+ .selectorSection{
+    width: 80%;
+ }
     .allCategory{
-      font-size: 12px;
+      font-size: 8px;
     }
     .menuIcon{
         padding-left: 0.4vw;
+        height: 8px;
+        width: 8px;
     }
     .selectorText,
     .selectorText2{
@@ -245,8 +267,8 @@ countdown {
         font-size: 7px; 
     }
     .favIcon,.cartIcon{
-        height: 14px;
-        width: 14px;
+        height: 8px;
+        width: 8px;
     }
     .searchBarContainer{
     display: flex !important;
@@ -268,6 +290,12 @@ countdown {
     }
     .timeEdit{
         font-size: 8px;
+    }
+    .leftSide{
+        gap: 5vw !important;
+    }
+    .toolsSection{
+        height: 22px !important;
     }
 }
 

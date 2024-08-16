@@ -68,7 +68,11 @@
             </p>
             <p class="toolText">Fruits & Vegetables</p>
             <p class="toolText">Beverages</p>
-            <p class="toolText"(click)="navigateToCheckout()">Checkout</p>
+            <!-- <p class="toolText"(click)="navigateToCheckout()">Checkout</p> -->
+            <p class="toolText" [ngClass]="{'activeSet': ischeckoutRoute()}" (click)="navigateToCheckout()">
+                Checkout
+                <img [src]="downArrowBlack" alt="photo" class="favIcon" style="padding-left: 0.4vw" (click)="navigateToHome()">
+            </p>  
             <p class="toolText"  [ngClass]="{'activeSet': isContactRoute()}" (click)="navigateToContact()">Contact</p>
         </div>
         <div class="rightSide" style="display: flex;flex-direction: row;gap: 2.9vh;width: 34%;">
