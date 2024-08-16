@@ -1,0 +1,86 @@
+.mainContainer,
+.contactText{
+    display: flex;
+    flex-direction: column;
+}
+.topContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 4vw 10vh;
+    border-bottom: 1px #E5E7EB solid;
+}
+.information{
+    padding: 4vw 10vh;
+}
+.contactText{
+    align-items: center;
+    gap: 0.9vw;
+    word-spacing: -0.26px;
+}
+.contact{
+    color: #030712;
+    font-size: 13px;
+    font-weight: 600;
+    word-spacing: -0.32px;
+}
+.question{
+    font-size: 56px;
+    color: #030712;
+    font-weight:bolder;
+    word-spacing: -1.12px;
+}
+.myInfoText{
+    font-size: 22px;
+    color: #030712;
+    font-weight: bold;
+    word-spacing: -1.12px;
+}
+.lorem{
+    color: #4B5563;
+    padding: 3vh 0vw 4vw 0vw;
+}
+.myInfo{
+    width: 50%;
+    border-bottom:1px #E5E7EB solid;
+}
+.locationContainer{
+    display: flex;
+    gap: 1.5vw;
+    align-items: flex-start;
+}
+.mainLocation{
+    font-size: 12px;
+}
+.mainLocation2{
+    font-size: 18px;
+    font-weight: 800
+}
+.mainLocation3{
+    font-size: 12px;
+    color :#4B5563;
+}
+.locationText{
+    display: flex;
+    gap: 1.2vh;
+    flex-direction: column;
+}
+.emailText{
+    color: #2563EB;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 2vh 0vh 7vh 0vh;
+}
+.followSection{
+    padding: 7vh 0vh 7vh 0vh;
+    display: flex;
+    gap: 0.9vh;
+    align-items: center;
+}
+.followUs{
+    color:#4B5563;
+    font-size: 12px;
+    padding-right: 0.5vh;
+}
+.socialIcon{
+    cursor: pointer;
+}

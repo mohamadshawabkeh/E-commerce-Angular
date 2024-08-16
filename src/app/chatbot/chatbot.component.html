@@ -1,5 +1,7 @@
 <div class="chatbot-container" [class.open]="isOpen">
-  <div class="chatbot-icon" *ngIf="!isOpen" (click)="toggleChat()">💬</div>
+  <div class="chatbot-icon" *ngIf="!isOpen" (click)="toggleChat()">
+    <img src="{{chatbotIcon}}" alt="">
+  </div>
   <div class="chat-window" *ngIf="isOpen">
     <div class="chat-header">
       <h3>Chat with us</h3>

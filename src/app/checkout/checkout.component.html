@@ -1,0 +1,152 @@
+<div class="mainContainer">
+         <div class="route">
+        Home > <span style="color: #030712; font-size: 12px; letter-spacing: -0.32px;padding-left: 1vw;">Checkout</span>
+       </div>
+
+       <p class="billing"> items in cart</p>
+       <div class="checkout-container">
+        <div class="item-container" *ngFor="let item of cartItems">
+          <img class="item-image" [src]="item.image" alt="{{ item.title }}">
+          <div class="item-details">
+            <p class="item-title">{{ item.title }}</p>
+            <p class="item-price">Price: ${{ item.price }}</p>
+            <p class="item-quantity">Quantity: {{ item.quantity }}</p>
+          </div>
+          <button class="remove" (click)="removeItem(item)">✖️</button>
+        </div>
+      </div>
+      
+       <div class="couponSection">
+        <img [src]="coupon" alt="">
+        <input type="text" placeholder="Have a coupon? Click here to enter your code" class="inputClass">
+       </div>
+    <div class="checkoutContainer">
+        <div class="dataContainer">
+            <div class="shipOffer">
+                <div class="offerContainer">
+                    <img [src]="offer" alt="">
+                    <p class="offerText"> Add <span class="PriceOffer">$299.11</span>  to cart and get free shipping!</p>
+                </div>
+            </div>
+            <p class="billing">Billing Details</p>
+            <div class="nameAndLast">
+                <div class="nameContainer">
+                    <p class="name">First Name *</p>
+                <input class="nameInput">
+                </div>
+                <div class="nameContainer">
+                <p class="name">Last Name *</p>
+                <input class="nameInput">
+                </div>
+            </div>
+            <div class="companyNameSection">
+                <p class="name">Company Name (optional)</p>
+                <input class="companyName">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">Country / Region *</p>
+                <input class="companyName">
+                </div>
+            <div class="streetAddressSection">
+                <p class="name">Street address *</p>
+                <input class="companyName" placeholder="House number and street name">
+                <input class="companyName" placeholder="Apartment, suite, unit, etc. (optional)">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">Town / City *</p>
+                <input class="companyName">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">State *</p>
+                <input class="companyName">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">ZIP Code *</p>
+                <input class="companyName">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">Phone *</p>
+                <input class="companyName">
+                </div>
+            <div class="companyNameSection">
+                <p class="name">Email address *</p>
+                <input class="companyName">
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox"> 
+                    <p style="font-size: 14px; width: 100%; padding-left: 0.4vw;" >Create an account?</p>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox"> 
+                    <p style="font-size: 14px; width: 100%; padding-left: 0.4vw; font-weight: 900;" >Ship to a different address?</p>
+                </div>
+                <div class="orderNotesSection">
+                    <p class="orderNotes">Order notes (optional)</p>
+                    <!-- <input class="orderNotesInput" placeholder="Notes about your order, e.g. special notes for delivery."> -->
+                    <textarea name="" id="" placeholder="Notes about your order, e.g. special notes for delivery." class="orderNotesInput"></textarea>
+                    </div>
+        </div>
+        
+        <div class="checkoutPlace">
+            <p class="yourOrder">Your order</p>
+            <div class="productList">
+                <p class="product">Product</p>
+                <p class="product">Subtotal</p>
+            </div>
+            <div *ngFor="let item of cartItems" class="productList">
+                <p class="productName">{{ item.title }} x {{item.quantity}}</p>
+                <p class="productName">$ {{ (item.price * item.quantity).toFixed(2) }}</p>
+              </div>
+              <div class="productList">
+                <p class="product">Subtotal</p>
+                <p class="productName">$ {{ subtotal.toFixed(2) }}</p>
+              </div>
+            <div class="productList">
+                <p class="product">Shipping:</p>
+                
+                    <form (change)="onShippingOptionChange($event)">
+                        <div class="shippingChoose">
+                            <label for="optionA" >Flat rate: $15.00</label>
+                            <input type="radio" id="optionA" name="choice" value="Option A">
+                        </div>
+                        <div class="shippingChoose">
+                            <label for="optionB">Local pickup</label>
+                            <input type="radio" id="optionB" name="choice" value="Option B">
+                        </div>
+                      </form>
+            </div>
+            <div class="productList">
+                <p class="product">Total</p>
+                <p class="productName">$ {{ total.toFixed(2) }}</p>
+              </div>
+            <form class="formOption" style="padding: 2vh 0vh;">
+                <div class="optionContainer">
+                    <input type="radio" id="optionA" name="choice" value="Option A" checked> 
+                    <label for="optionA"  style="padding: 0vh 0.8vh;font-size: 14px;">Direct bank transfer</label>
+                </div>
+                <p class="bankDiscription">Make your payment directly into our bank account. Please
+                    use your Order ID as the payment reference. Your order
+                    will not be shipped until the funds have cleared in our
+                    account.</p>
+                    <div class="optionContainer">
+                        <input type="radio" id="optionB" name="choice" value="Option B">
+                        <label for="optionB" style="padding: 0vh 0.8vh; font-size: 14px;">Check payments</label><br>
+                    </div>
+                    <div class="optionContainer">
+                        <input type="radio" id="optionC" name="choice" value="Option C">
+                        <label for="optionC"  style="padding: 0vh 0.8vh; font-size: 14px;">Cash on delivery</label>
+                    </div>
+                    <p class="bankDiscription">Your personal data will be used to process your order,
+                        support your experience throughout this website, and for
+                        other purposes described in our privacy policy.</p>
+            </form>
+            <div class="rememberPassword">
+                <div class="checkboxTerm">
+                    <input type="checkbox"> 
+                    <p class="readTerm">I have read and agree to the website <span style="color:#634C9F">Terms and conditions *</span> </p>
+                </div>
+            </div>
+            <button class="placeOrder">Place Order</button>
+        </div>
+    </div>
+</div>

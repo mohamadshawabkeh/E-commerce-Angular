@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     background-color: #634C9F;
     border-radius: 50%;
     display: flex;
@@ -31,10 +31,10 @@
     animation: none; 
   }
   
-  .chatbot-icon {
-    font-size: 38px;
-    color: white;
-  }
+  // .chatbot-icon {
+  //   font-size: 38px;
+  //   color: white;
+  // }
   
   .chat-window {
     width: 100%;
@@ -177,4 +177,13 @@
   .loading-indicator img {
     width: 40px; 
     height: 40px; 
+  }
+  @media (max-width:800px) {
+    .chatbot-container {
+      right: 40px ;
+    }
+    .chatbot-container.open{
+      width: 78%;
+      height: 85%;
+    }
   }

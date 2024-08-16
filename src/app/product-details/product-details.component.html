@@ -57,8 +57,8 @@
             <span class="quantity">{{ quantity }}</span>
             <button class="btn" (click)="increase()">+</button>
           </div>
-         <button class="addCart">
-            <img [src]="addCartIcon" alt="">
+         <button class="addCart" (click)="addToCart()">
+            <img [src]="addCartIcon" alt="" >
             Add to cart
          </button>
          <button class="buyNow">

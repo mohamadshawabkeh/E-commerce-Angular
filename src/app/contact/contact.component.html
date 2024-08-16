@@ -1,0 +1,37 @@
+<div class="mainContainer">
+    <div class="topContainer">
+        <div class="contactText">
+            <p class="contact">Contact With Us</p>
+            <p class="question">You can ask us questions</p>
+            <p class="contactSmall">Contact us for all your questions and opinions, or you can solve your</p>
+            <span class="contactSmall">problems in a shorter time with our contact offices.</span>
+        </div>
+    </div>
+    <div class="information">
+        <div class="myInfo">
+            <p class="myInfoText">My Information</p>
+            <p class="lorem">You can find below my information for contact, if you have any questions, feel free to ask!</p>
+            <div class="location">
+                <div class="locationContainer">
+                    <img [src]="pinIcon" alt="photo" class="pinIcon">
+                    <div class="locationText">
+                        <p class="mainLocation">Jordan</p>
+                        <p class="mainLocation2">Amman</p>
+                        <p class="mainLocation3">Almadina Street</p>
+                        <p class="phoneText" class="mainLocation2">+962 7755 2 7474</p>
+                        <p class="emailText" (click)="sendEmail()">{{ email }}</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="followSection">
+            <p class="followUs">Follow us:</p>
+            <img [src]="linkedIcon" alt="photo" class="socialIcon" (click)="navigateToLinkedIn()">
+            <img [src]="twitterIcon" alt="photo" class="socialIcon" (click)="navigateToGithub()" style="width: 33px;">
+            <img [src]="facebookIcon" alt="photo" class="socialIcon" (click)="navigateToFacebook()">
+            <img [src]="instaIcon" alt="photo" class="socialIcon" (click)="navigateToInsta()">
+
+        </div>
+        
+    </div>
+</div>

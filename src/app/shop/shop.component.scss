@@ -294,7 +294,7 @@ input[type="checkbox"] {
     color: #FEF2F2;
     padding: 1.3vh;
     border-radius: 30px;
-    width: 25%;
+    width: 19%;
     top: -47%;
 }
 .discountAmount{
@@ -335,7 +335,8 @@ input[type="checkbox"] {
 .chartStock{
     display: flex;
     align-items: center;
-    gap: 2vh
+    gap: 2vh;
+    cursor: pointer;
 }
 .chart{
     width:36px;
@@ -354,6 +355,10 @@ font-weight: 700;
 .columnLayout .cardsMarket {
     padding: 2vh 0vw 2vh 0vw;
     flex-direction: column !important;
+}
+.columnLayout{
+  padding: 2vh 0vw 2vh 0vw;
+
 }
   .arrangeLayout {
         width: 100%;

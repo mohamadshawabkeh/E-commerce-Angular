@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 30%;
+    height: 27%;
     border-bottom: 1px #eae2e2 solid;
 }
 .globalNotification{
@@ -28,14 +28,30 @@
     font-weight: 600;
 }
 // ==============================
-// .selectorSection{
-//     padding: 0.8%;
-//     border-top: 1px #eae2e2 solid;
-// }
+.firstNavContainer{
+    display: flex;
+    margin-left: 3.8vw;
+    padding: 2vh 0vh;
+}
+.selectorSection{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5%;
+    
+}
+.englishSection{
+    width: 13%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
 .selectorText,
 .selectorText2{
     color:#6B7280;
     font-family: 'Inter',sans-serif;
+    font-size: 12px;
+    cursor: pointer;
 }
 .selectorText2{
     margin-left: 10px;
@@ -112,5 +128,185 @@
 }
 .menuIcon{
     padding-left: 1.4vw;
+}
+.deliverPlace{
+    width: 7%;
+}
+.signInAccount{
+    cursor: pointer;
+    display: flex;
+    gap: 8%;
+    align-items: center;
+}
+.profileIcon{
+    width: 27px;
+}
+.cartSection{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.cartNumber{
+    background-color: #DC2626;
+    position: relative;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    border-radius: 50%;
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    top: -12px;
+    left: -8px;
+    justify-content: center;
+    align-items: center;
+}
+countdown {
+    display: flex;
+    justify-content: center;
+    font-size: 18px; 
+    color: #FFFFFF; 
+    font-weight: bold; 
+  
+    .countdown-item {
+      padding: 0 5px; 
+    }
+  
+    .countdown-colon {
+      color: #000; 
+    }
+  }
+  
+@media (max-width: 767px) {
+    .globalNotification{
+        height:24px;
+        gap: 4%;
 
+    }
+    .rightSide{
+        display: none !important;
+    }
+    countdown {
+        font-size: 7px;
+
+        .countdown-item {
+            font-size: 7px;
+        }
+
+      }
+
+    .globalTime{
+        color: #E5E5E5;
+        font-size: 11px;
+     }
+     .container{
+        height: 16%;
+
+     }
+     .timeEdit{
+        font-size: 14px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+    .searchBar {
+        padding: 8px;
+        border-radius: 10px;
+        border: none;
+        height: 10%;
+        font-size: 7px;
+    }
+    .toolText,
+.toolText2,
+.toolText3{
+    line-height: 8px;
+    font-size: 8px;
+}
+.toolText3{
+    margin: 4px;
+    font-size: 7px;
+    padding: 3px;
+}
+.ifHome{
+    display: none;
+ }
+ .selectorSection{
+    width: 80%;
+ }
+    .allCategory{
+      font-size: 8px;
+    }
+    .menuIcon{
+        padding-left: 0.4vw;
+        height: 8px;
+        width: 8px;
+    }
+    .selectorText,
+    .selectorText2{
+        font-size: 7px; 
+    }
+    .logoImg{
+        height: 17px;
+        width: 85px !important;
+    }
+    .pinIcon{
+        height: 10px;
+        width: 10px;
+    }
+    .deliverTo{
+        font-size: 7px; 
+    }
+    .searchIcon{
+        right: 29px !important;
+        top: 0px !important;    
+        width: 15px;
+    }
+    .profileIcon{
+        width: 15px;
+    }
+    .signAccount{
+        font-size: 7px; 
+    }
+    .favIcon,.cartIcon{
+        height: 8px;
+        width: 8px;
+    }
+    .searchBarContainer{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center !important;
+    margin: 0 !important;
+    }
+    .deliverPlace{
+        display: flex;
+        width: 7%;
+        gap: 0px;
+        flex-direction: column;
+    }
+    .globalText{
+        font-size: 7px !important;
+    }
+    .globalTime{
+        display: none;
+    }
+    .timeEdit{
+        font-size: 8px;
+    }
+    .leftSide{
+        gap: 5vw !important;
+    }
+    .toolsSection{
+        height: 22px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .globalTime{
+        color: #E5E5E5;
+        font-size: 12px;
+     }
+     .timeEdit{
+        font-size: 15px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
 }
